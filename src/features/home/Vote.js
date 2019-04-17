@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 
-export class ElementOfCarrousel extends Component {
+export class Vote extends Component {
   static propTypes = {
     home: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
@@ -12,8 +12,8 @@ export class ElementOfCarrousel extends Component {
 
   render() {
     return (
-      <div className="home-element-of-carrousel">
-        Page Content: home/ElementOfCarrousel
+      <div className="home-vote">
+        Page Content: home/Vote
       </div>
     );
   }
@@ -36,4 +36,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ElementOfCarrousel);
+)(Vote);

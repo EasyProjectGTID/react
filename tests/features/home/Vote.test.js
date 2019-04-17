@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ElementOfCarrousel } from '../../../src/features/home/ElementOfCarrousel';
+import { Vote } from '../../../src/features/home/Vote';
 
-describe('home/ElementOfCarrousel', () => {
+describe('home/Vote', () => {
   it('renders node with correct class name', () => {
     const props = {
       home: {},
       actions: {},
     };
     const renderedComponent = shallow(
-      <ElementOfCarrousel {...props} />
+      <Vote {...props} />
     );
 
     expect(
-      renderedComponent.find('.home-element-of-carrousel').length
+      renderedComponent.find('.home-vote').length
     ).toBe(1);
   });
 });

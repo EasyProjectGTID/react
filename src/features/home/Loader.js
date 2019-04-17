@@ -7,10 +7,11 @@ export default class Loader extends Component {
 
   render() {
     return (
-        <div class="spinner-border fast" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-       
+
+        <div className="spinner-border slow" role="status">
+          <span className="sr-only">Loading...</span></div>
+          
+        
     );
   }
 }

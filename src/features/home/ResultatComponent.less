@@ -1,0 +1,189 @@
+@import '../../styles/mixins';
+
+.home-resultat-component {
+  margin-top: 2%;
+
+}
+
+.search-loader{
+  margin:auto;
+}
+
+
+* {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+
+
+
+
+
+
+
+#results {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 1.2em;
+    text-align: center;
+    color: rgba(201, 201, 201, 0.738);
+    font-weight: 300;
+    text-transform: uppercase;
+    word-spacing: 8px;
+
+    overflow: auto;
+}
+
+#suggested {
+    font-size: 1.2em;
+    text-align: center;
+    color: rgba(201, 201, 201, 0.738);
+    font-weight: 300;
+    text-transform: uppercase;
+    word-spacing: 8px;
+
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    
+}
+.separateur {
+    margin: 1em auto;
+    width: 33%;
+    background-color: rgba(201, 201, 201, 0.738);
+    height: 1px;
+}
+#elements {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    overflow: auto;
+}
+
+  
+  /*article*/
+  .cardCustom {
+    /*box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);*/
+    position: relative;
+    width: 150px !important;
+    margin: 0 auto;
+    transition: box-shadow 0.15s ease-out, transform 0.25s ease;
+    perspective: 500px;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    transition: border 3s ease;
+  }
+  .cardCustom__link:hover {
+    border: 1px solid #c087b7;
+    box-shadow: 0 0 10px #c087b7;
+  }
+
+  .cardCustom:hover {
+    transform: scale(1.1);
+    box-shadow: none;
+  }
+  .cardCustom.hover--ending {
+    transition: box-shadow 0.5s ease;
+  }
+  @media only screen and (min-width: 540px) {
+    .cardCustom {
+      display: inline-block;
+    }
+  }
+  .cardCustom + .cardCustom {
+    margin: 45px auto 0;
+  }
+  @media only screen and (min-width: 540px) {
+    .cardCustom + .cardCustom {
+      margin: 0 0 0 25px;
+    }
+  }
+  
+  /*span*/
+  .highlight {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 3;
+    transition: opacity 0.25s ease;
+    background: radial-gradient(60px at 50%, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  /*a*/
+ #results .cardCustom__link {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 228px;
+    overflow: hidden;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+  }
+
+#suggested .cardCustom__link {
+    display: block;
+    position: relative;
+    width: 100px !important;
+    height: 152px !important;
+    overflow: hidden;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+}
+
+#suggested .cardCustom {
+    width: 100px !important;
+}
+  
+  /*img*/
+  .cardCustom__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  /*h2*/
+  .cardCustom__title {
+    font-size: 10px;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+
+    left: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+    /*article*/
+  }
+  .cardCustom:hover .cardCustom__title {
+    opacity: 0.8;
+  }
+  
+
+/* Defines the width of the carousel and centers it on the page */
+.slick-carousel {
+    margin: 0 auto;
+    width: 1000px;
+  }
+  
+  /* The width of each slide */
+  .slick-slide {
+    width: 100px;
+  }
+  
+  /* Color of the arrows */
+  .slick-next::before, .slick-prev::before {
+    color: blue;
+  }

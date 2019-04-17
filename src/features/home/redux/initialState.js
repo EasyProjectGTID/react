@@ -1,6 +1,16 @@
 const initialState = {
   token: '',
-  filmPourVote: [],
+  resultatRecherche: [],
+
+  cloudWords: [],
+  showDetails: null,
+  getSimilarItemsPending: false,
+  getSimilarItemsError: null,
+  getRecentSeriePending: false,
+  getRecentSerieError: null,
+  getCloudWordsPending: false,
+  getCloudWordsError: null,
+
 
 };
 
