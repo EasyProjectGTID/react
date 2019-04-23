@@ -5,6 +5,7 @@ import {
   HOME_GET_SIMILAR_ITEMS_DISMISS_ERROR,
 } from './constants';
 import axios from 'axios'
+import ip from '../../../services/config';
 
 // Rekit uses redux-thunk for async actions by default: https://github.com/gaearon/redux-thunk
 // If you prefer redux-saga, you can use rekit-plugin-redux-saga: https://github.com/supnate/rekit-plugin-redux-saga
@@ -22,7 +23,7 @@ export function getSimilarItems(args = {}) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = axios.get('http://127.0.0.1:8000/similar?id=' + args)
+      const doRequest = axios.get('http://'+ ip +':8000/similar?id=' + args)
       doRequest.then(
         (res) => {
           dispatch({

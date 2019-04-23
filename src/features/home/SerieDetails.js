@@ -18,67 +18,69 @@ export class SerieDetails extends Component {
     const { showDetails } = this.props.home;
     const { clickSerieDetails } = this.props.actions;
     return (
-      <div className="serie-details-row h-100 ">
-        <Row className="test">
-  
-          <div class="col col-md-2" >
-            <img className="serie-poster" src={showDetails.infos.Poster} alt="toto" />
-          </div>
-          
-          <div className="col auto offset-2" >
-            <Table>
-              <tbody>
-                <tr>
-                  <td>Année de sortie</td>
-                  <td>{showDetails.infos.Year}</td>
-                </tr>
-                <tr>
-                  <td>Genre</td>
-                  <td>
-                    {showDetails.infos.Genre.split(',').map((item, i) => (
-                      <span key={i} class="badge badge-pill badge-warning">{item} </span>
-                    ))}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Acteurs</td>
-                  <td>{showDetails.infos.Actors}</td>
-                </tr>
-                <tr>
-                  <td>Pays de production</td>
-                  <td>{showDetails.infos.Country}</td>
-                </tr>
-              </tbody>
-            </Table>
-          </div>
-   
-          
-        </Row>
+      <div class="container">
+      
+     
+        <div class="row">
         
-
-        <Row className="row justify-content-md-center">
-          <Col sm="8">
-            {' '}
-            <p className="synopsis-p" align="center">
-              Synopsis
-            </p>{' '}
-            <p>{showDetails.infos.Plot}</p>
-          </Col>
-        </Row>
-
-        <Row align="center">
-          <Button
-            className="button-retour"
-            align="center"
-            onClick={() => clickSerieDetails(null)}
-            color="warning"
-          >
-            Revenir aux résultats
-          </Button>
-        </Row>
-        <Row>
-          <Recommandations />
-        </Row>
+          <div class="col-md-8 film-focus offset-md-2">
+            <div class="row">
+        
+              <div class="col-md-4 desc-img">
+                {' '}
+                <img src={showDetails.infos.Poster} alt="Mad Max: Fury Road" />
+              </div>
+              <div class="col-md-8 desc-text">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-8 film-title">
+                      <h3>
+                        <strong>{showDetails.name}</strong>
+                      </h3>
+                    </div>
+                    <div class="col-md-4 film-date">
+                      <span>{showDetails.infos.Year}</span>
+                    </div>
+                  </div>
+                </div>
+                <p>{showDetails.infos.Plot}</p>
+                <div class="container prod">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <span class="real">Réalisateur</span>
+                      <div class="real-value">{showDetails.infos.Writer}</div>
+                    </div>
+                    <div class="col-md-8">
+                      <span class="cast">Acteurs</span>
+                      <div class="cast-value">{showDetails.infos.Actors}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="desc-film-btns">
+                  {showDetails.infos.Genre.split(',').map((item, i) => (
+                    <span key={i} class="badge badge-pill badge-warning">
+                      {' '}
+                      {item}{' '}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <Row className="backToresult row justify-content-center">
+              <Button
+                className="button-retour"
+                align="center"
+                onClick={() => clickSerieDetails(null)}
+                color="warning"
+              >
+                Revenir aux résultats
+              </Button>
+            </Row>
+            <div className="separateur" />
+                 
+            <Recommandations />
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,58 @@
+@import '../../styles/mixins';
+
+.home-poster-component {
+
+}
+.image-poster {
+  
+
+    opacity: 1;
+  display: block;
+
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.poster-image{
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 90%;
+  height: 20vw;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  .poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color ease .35s;
+  }
+  .like-buttons {
+    position: absolute;
+    bottom: -25px;
+    transition: bottom ease .35s;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    > svg {
+      align-content: space-between;
+      flex: 1;
+    }
+  }
+  &:hover {
+    .poster-overlay {
+          background-color: rgba(0, 0, 0, .7);
+    }
+    .like-buttons {
+      bottom: 10px;
+    }
+  }
+}
+
+
+

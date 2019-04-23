@@ -4,6 +4,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import { Container, Row, Col } from 'reactstrap';
+import Carousel from 'nuka-carousel';
+import PosterComponent from './PosterComponent'
+
+
 export class LastRecent extends Component {
   static propTypes = {
     home: PropTypes.object.isRequired,
@@ -27,30 +31,30 @@ export class LastRecent extends Component {
   render() {
     const { showDetails } = this.props.home;
     const { clickSerieDetails } = this.props.actions;
-    return (
-      <div className="div-container container">
-        <Row className="justify-content-center align-self-center">Nos dernière series</Row>
-        
-        <Row>
-        {this.state.lastR.map((item, i) => (
-      
-            <Col className="col"><b>{item.name}</b>
-       
-         
-                <img
+    if (showDetails == null) {
+      return (
+        <div className="div-container container">
+          <Row className=" testSerie justify-content-center align-self-center">Nos dernière series</Row>
+
+          <Row>
+            {this.state.lastR.map((item, i) => (
+              <Col className="col-2">
+                <b>{item.name}</b>
+                <PosterComponent movie={item}/>
+                {/*<img
                   className="img-recommandation"
                   onClick={() => clickSerieDetails(item)}
                   alt=""
                   src={item.infos.Poster}
-                />
-          
-            </Col>
-       
-      
-        ))}
-        </Row>
-      </div>
-    );
+                />*/}
+              </Col>
+            ))}
+          </Row>
+        </div>
+      );
+    } else {
+      return(<div></div>)
+    }
   }
 }
 

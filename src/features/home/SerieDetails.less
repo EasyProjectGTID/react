@@ -1,39 +1,57 @@
 @import '../../styles/mixins';
 
-.serie-details-row {
+.backToresult{
+  margin-top: 6%;
+}
+
+.film-focus {
   margin-top: 5%;
-  background-color:rgba(0, 0, 0, 0.5) !important;
+  opacity: 0.96;
+  padding: 2em 2.5em;
 }
-
-
-
-td{
-  color: white;
-}
-
-p{
-  color: white;
-}
-
-.serie-poster {
-height: auto; 
-    width: auto; 
-    max-width: 300px; 
-    max-height: 300px;
-}
-
-.container-img{
-  position: absolute;
+.desc-img img {
   width: 100%;
+  border: 1px solid #1f1f1f;
+  box-shadow: 0 0 15px #1f1f1f;
 }
 
-
-
-.synopsis-p {
-  font-size: 150%;
-  color: white;
+.desc-text {
+  color: #FFFFFF;
+}
+.desc-text .film-title {
+  font-weight: bold;
+  text-align: left;
+}
+.desc-text .film-date {
+  text-align: right;
+}
+.desc-text .stats {
+  font-size: 0.75em;
+  font-weight: 300;
+  color: rgba(241, 241, 241, 0.918);
+  margin: 1em;
+}
+.desc-text .stats span {
+  margin: 0 0.75em;
+}
+.desc-text p, .prod {
+  font-size: 0.9em;
 }
 
-.button-retour {
-  margin: auto;
+.prod .real, .prod .cast {
+  color: #ffc600;
+  font-weight: 200;
+}
+.prod .real-value, .prod .cast-value {
+  
+}
+
+.desc-film-btns .btns {
+  display: inline-block;
+  border: 1px solid rgba(56, 56, 56, 0.986);
+  background-color: rgba(87, 87, 87, 0.897);
+  margin: 2em 0.25em;
+  text-align: center;
+  padding: 0.75em;
+  font-size: 0.55em;
 }

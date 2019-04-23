@@ -6,13 +6,12 @@ import * as actions from './redux/actions';
 import ResultatComponent from './ResultatComponent';
 import { Row } from 'reactstrap';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Container } from 'reactstrap';
 
 import { Form } from 'react-bootstrap';
 import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class Search extends Component {
   static propTypes = {
@@ -22,6 +21,7 @@ export class Search extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = { searchText: '', resultatState: [], focus: false };
   }
 
@@ -37,35 +37,11 @@ export class Search extends Component {
 
     return (
       <Container className="container-search">
-        <div className="container-search">
-          <input type="text" className={this.state.focus && 'focused'} placeholder="Search" 
-          onChange={event => {
-              this.setState({ searchText: event.target.value });
-            }}
-            onKeyPress={event => {
-              if (event.key === 'Enter') {
-                this.setState({ resultatState: [] });
-                if (this.state.searchText.length !== 0) {
-                  searchAction(this.state.searchText);
-                }
-              }
-            }}/>
-          <button onClick={this.focus} id="search-button" className={this.state.focus && 'active'}>
-            <span role="img" aria-label="search">
-              🔍
-            </span>
-          </button>
-        </div>
-        {/*<InputGroup>
-          <InputGroupAddon addonType="prepend">
-            <InputGroupText>
-              <FontAwesomeIcon icon="search" />
-            </InputGroupText>
-          </InputGroupAddon>
-          <Input className=""
-            size="md"
-            type="text"
-            placeholder="Recherche par mot clés ou nom de serie"
+       
+        <div class="input-group">
+          <input className="form-control py-2 border-right-0 border"  type="text"
+            
+            placeholder="Search"
             onChange={event => {
               this.setState({ searchText: event.target.value });
             }}
@@ -76,9 +52,13 @@ export class Search extends Component {
                   searchAction(this.state.searchText);
                 }
               }
-            }}
-          />
-        </InputGroup>*/}
+            }}/>
+          <span class="input-group-append">
+            <div class="input-group-text ">
+              <FontAwesomeIcon icon="search" />
+            </div>
+          </span>
+        </div>
       </Container>
     );
   }

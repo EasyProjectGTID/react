@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import { Container, Row, Col } from 'reactstrap';
+import PosterComponent from './PosterComponent';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 export class Recommandations extends Component {
@@ -44,10 +45,14 @@ export class Recommandations extends Component {
     if (showDetails !== null) {
       return (
         <Row className="home-similar-items">
-          <Row>Nous avons trouvé des series similaires</Row>
-          <Row>
-            {this.state.recommandations.map((item, i) => (
+          <div className="col-md-4" />
+          <div className="col-md-4">
+            <div className="row justify-content-center">Series similaires</div>
+          </div>
+          <div className="col-md-4" />
 
+          <Row className="similar">
+            {this.state.recommandations.map((item, i) => (
               <Col>
                 {item.name}
 
@@ -59,17 +64,14 @@ export class Recommandations extends Component {
                     src={item.infos.Poster}
                   />
                 </p>
-
-
               </Col>
-
             ))}
           </Row>
         </Row>
       );
-
-
-    } else {return(<div></div>)}
+    } else {
+      return <div />;
+    }
   }
 }
 

@@ -7,6 +7,7 @@ import Loader from './Loader';
 import SerieDetails from './SerieDetails';
 import { Container, Row, Col } from 'reactstrap';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import PosterComponent from './PosterComponent';
 
 export class ResultatComponent extends Component {
   static propTypes = {
@@ -18,41 +19,46 @@ export class ResultatComponent extends Component {
     super(props);
     this.state = { moviePk: null };
   }
+
+  renderText() {
+    const { resultatRecherche } = this.props.home;
+    if (resultatRecherche.length === 0) {
+      return <Row />;
+    } else {
+      return (
+        <Row className="resultatText row justify-content-center">
+          <div className="resultatText" align="center">
+            Vos résultats de recherche
+          </div>
+        </Row>
+      );
+    }
+  }
+
   render() {
     const { resultatRecherche, showDetails } = this.props.home;
     const { clickSerieDetails } = this.props.actions;
     if (showDetails === null) {
       return (
-        <Row className="home-resultat-component">
-          {this.props.home.searchActionPending && (
-            <Col align="center">
-              <Loader className="search-loader" />
-            </Col>
-          )}
+        <div>
+          {this.renderText()}
 
-          {resultatRecherche &&
-            resultatRecherche.map((item, i) => (
-              <Col id={item.name}>
-                <div id="results">
-                  <div id="elements">
-                    <article class="cardCustom" onClick={() => {
-                      clickSerieDetails(item);
-                    }}>
-                      <a href="#" className="cardCustom__link">
-                        <span className="" />
-                        <img
-                          src={item.infos.Poster}
-                          alt={item.name}
-                          class="cardCustom__image"
-                        />
-                      </a>
-                      <h2 class="cardCustom__title">{item.name}</h2>
-                    </article>
-                  </div>
-                </div>
+          <Row className="home-resultat-component">
+            {this.props.home.searchActionPending && (
+              <Col align="center">
+                <Loader className="search-loader" />
+              </Col>
+            )}
+
+            {resultatRecherche &&
+              resultatRecherche.map((item, i) => (
+                <Col id={item.name}>
+                  <PosterComponent movie={item} />
                 </Col>
-            ))}
-        </Row>
+              ))}
+          </Row>
+          <div className="separateur" />
+        </div>
       );
     } else {
       return <SerieDetails />;

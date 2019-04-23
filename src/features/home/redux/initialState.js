@@ -8,9 +8,7 @@ const initialState = {
   getSimilarItemsError: null,
   getRecentSeriePending: false,
   getRecentSerieError: null,
-  getCloudWordsPending: false,
-  getCloudWordsError: null,
-
+  
 
 };
 
