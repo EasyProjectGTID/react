@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import { Container, Row, Col } from 'reactstrap';
-import Carousel from 'nuka-carousel';
+
 import PosterComponent from './PosterComponent'
 
 

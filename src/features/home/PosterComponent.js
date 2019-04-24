@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp, faThumbsDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export class PosterComponent extends Component {
   static propTypes = {
     home: PropTypes.object.isRequired,
@@ -22,8 +24,9 @@ export class PosterComponent extends Component {
       >
       <div className='poster-overlay'></div>
       <div className='like-buttons'>
-        <FontAwesomeIcon icon="search" />
-        <FontAwesomeIcon icon="search" />
+      <FontAwesomeIcon icon={faThumbsDown} size="lg" color="red"/>
+      <FontAwesomeIcon icon={faThumbsUp} size="lg" color="green" />
+      
       </div>
         {/*<img
           className=""
