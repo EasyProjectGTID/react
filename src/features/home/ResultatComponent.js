@@ -40,7 +40,7 @@ export class ResultatComponent extends Component {
     const { clickSerieDetails } = this.props.actions;
     if (showDetails === null) {
       return (
-        <div>
+        <div className="div-container container">
           {this.renderText()}
 
           <Row className="home-resultat-component">

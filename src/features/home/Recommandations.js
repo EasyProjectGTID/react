@@ -7,6 +7,7 @@ import { Container, Row, Col } from 'reactstrap';
 import PosterComponent from './PosterComponent';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
+
 export class Recommandations extends Component {
   static propTypes = {
     home: PropTypes.object.isRequired,
@@ -44,17 +45,13 @@ export class Recommandations extends Component {
     const { clickSerieDetails } = this.props.actions;
     if (showDetails !== null) {
       return (
-        <Row className="home-similar-items">
-          <div className="col-md-4" />
-          <div className="col-md-4">
-            <div className="row justify-content-center">Series similaires</div>
-          </div>
-          <div className="col-md-4" />
-
-          <Row className="similar">
+        <div class="row">
+     
+       
             {this.state.recommandations.map((item, i) => (
-              <Col>
-                {item.name}
+            <Col className="">
+              <PosterComponent movie={item}/>
+                {/*{item.name}
 
                 <p>
                   <img
@@ -63,11 +60,12 @@ export class Recommandations extends Component {
                     alt=""
                     src={item.infos.Poster}
                   />
-                </p>
-              </Col>
+                </p>*/}</Col>
+             
             ))}
-          </Row>
-        </Row>
+          
+     
+        </div>
       );
     } else {
       return <div />;

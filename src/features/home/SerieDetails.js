@@ -7,6 +7,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { Button, Table } from 'reactstrap';
 import Recommandations from './Recommandations';
 import Vote from './Vote';
+import PosterComponent from './PosterComponent'
 
 export class SerieDetails extends Component {
   static propTypes = {
@@ -18,7 +19,7 @@ export class SerieDetails extends Component {
     const { showDetails } = this.props.home;
     const { clickSerieDetails } = this.props.actions;
     return (
-      <div class="container">
+      <div className="container tutu">
       
      
         <div class="row">
@@ -78,9 +79,11 @@ export class SerieDetails extends Component {
             </Row>
             <div className="separateur" />
                  
-            <Recommandations />
+            
           </div>
+          
         </div>
+        <Recommandations />
       </div>
     );
   }

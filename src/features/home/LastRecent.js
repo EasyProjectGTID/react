@@ -4,9 +4,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import { Container, Row, Col } from 'reactstrap';
-
-import PosterComponent from './PosterComponent'
-
+import Slider from 'react-slick';
+import PosterComponent from './PosterComponent';
 
 export class LastRecent extends Component {
   static propTypes = {
@@ -29,14 +28,40 @@ export class LastRecent extends Component {
   }
 
   render() {
+    var settings = {
+      dots: true,
+
+      infinite: true,
+      speed: 250,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+
+      autoplaySpeed: 2000,
+      cssEase: 'linear',
+    };
     const { showDetails } = this.props.home;
     const { clickSerieDetails } = this.props.actions;
     if (showDetails == null) {
       return (
         <div className="div-container container">
-          <Row className=" testSerie justify-content-center align-self-center">Nos dernière series</Row>
-
-          <Row>
+          <Row className=" testSerie justify-content-center align-self-center">
+            Nos dernière series
+          </Row>
+          <Slider {...settings}>
+            {this.state.lastR.map((item, i) => (
+              <Col>
+                <PosterComponent movie={item} />
+                {/*<img
+                  className="img-recommandation"
+                  onClick={() => clickSerieDetails(item)}
+                  alt=""
+                  src={item.infos.Poster}
+                />*/}
+              </Col>
+            ))}
+          </Slider>
+          {/*<Row>
             {this.state.lastR.map((item, i) => (
               <Col className="col-2">
                 <b>{item.name}</b>
@@ -46,14 +71,14 @@ export class LastRecent extends Component {
                   onClick={() => clickSerieDetails(item)}
                   alt=""
                   src={item.infos.Poster}
-                />*/}
+                />}
               </Col>
             ))}
-          </Row>
+          </Row>*/}
         </div>
       );
     } else {
-      return(<div></div>)
+      return <div />;
     }
   }
 }

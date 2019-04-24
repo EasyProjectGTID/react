@@ -14,9 +14,11 @@
 }
 
 .poster-image{
+
   background-size: cover;
   background-repeat: no-repeat;
-  width: 90%;
+
+  width: 100%;
   height: 20vw;
   display: inline-block;
   cursor: pointer;
@@ -44,15 +46,40 @@
       flex: 1;
     }
   }
+
+ 
   &:hover {
     .poster-overlay {
           background-color: rgba(0, 0, 0, .7);
     }
     .like-buttons {
       bottom: 10px;
+      border:5px;
+      border-color:black;
     }
+    .see{
+      top:45%;
+      left:25%;
+    }
+    
   }
 }
 
+ .see{
+       position: absolute;
+    bottom: -25px;
+    transition: bottom ease .35s;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    top:-20%;
+    
+    }
 
+
+.icons-vote{
+border: 4px;
+border-color:black;
+}
 
