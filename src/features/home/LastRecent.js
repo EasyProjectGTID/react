@@ -48,9 +48,9 @@ export class LastRecent extends Component {
           <Row className=" testSerie justify-content-center align-self-center">
             Nos dernière series
           </Row>
-          <Slider {...settings}>
+          <Slider className="slider" {...settings}>
             {this.state.lastR.map((item, i) => (
-              <Col>
+              <Col className="col-md-8 offset-md-2">
                 <PosterComponent movie={item} />
                 {/*<img
                   className="img-recommandation"

@@ -49,7 +49,7 @@ export class Recommandations extends Component {
      
        
             {this.state.recommandations.map((item, i) => (
-            <Col className="">
+            <Col className="col-md-2 offset-md-1">
               <PosterComponent movie={item}/>
                 {/*{item.name}
 
