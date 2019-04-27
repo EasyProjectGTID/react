@@ -4,13 +4,12 @@ import {
   HOME_SEARCH_ACTION_FAILURE,
   HOME_SEARCH_ACTION_DISMISS_ERROR,
 } from './constants';
-import axios from 'axios'
+import httpService from '../../../services/httpService';
 import ip from '../../../services/config';
-
 // Rekit uses redux-thunk for async actions by default: https://github.com/gaearon/redux-thunk
 // If you prefer redux-saga, you can use rekit-plugin-redux-saga: https://github.com/supnate/rekit-plugin-redux-saga
 export function searchAction(args = {}) {
-  return (dispatch) => { // optionally you can have getState as the second argument
+  return (dispatch, getState) => { // optionally you can have getState as the second argument
     dispatch({
       type: HOME_SEARCH_ACTION_BEGIN,
     });
@@ -23,7 +22,8 @@ export function searchAction(args = {}) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = axios.get('http://' + ip +':8000/recherche?keywords=' + args)
+      
+      const doRequest = httpService(getState().home.token).get(ip +':8000/recherche?keywords=' + args)
       doRequest.then(
         (res) => {
           dispatch({

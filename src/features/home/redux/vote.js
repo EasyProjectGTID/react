@@ -1,17 +1,18 @@
 import {
-  HOME_GET_CLOUD_WORDS_BEGIN,
-  HOME_GET_CLOUD_WORDS_SUCCESS,
-  HOME_GET_CLOUD_WORDS_FAILURE,
-  HOME_GET_CLOUD_WORDS_DISMISS_ERROR,
+  HOME_VOTE_BEGIN,
+  HOME_VOTE_SUCCESS,
+  HOME_VOTE_FAILURE,
+  HOME_VOTE_DISMISS_ERROR,
 } from './constants';
-import axios from 'axios'
+import httpService from '../../../services/httpService';
+import ip from '../../../services/config';
 
 // Rekit uses redux-thunk for async actions by default: https://github.com/gaearon/redux-thunk
 // If you prefer redux-saga, you can use rekit-plugin-redux-saga: https://github.com/supnate/rekit-plugin-redux-saga
-export function getCloudWords(args = {}) {
-  return (dispatch) => { // optionally you can have getState as the second argument
+export function vote(args = {}) {
+  return (dispatch, getState) => { // optionally you can have getState as the second argument
     dispatch({
-      type: HOME_GET_CLOUD_WORDS_BEGIN,
+      type: HOME_VOTE_BEGIN,
     });
 
     // Return a promise so that you could control UI flow without states in the store.
@@ -22,11 +23,11 @@ export function getCloudWords(args = {}) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = axios.get('http://127.0.0.1:8000/cloud');
+      const doRequest = httpService(getState().home.token).post(ip+ ':8000/vote', args, 'toto');
       doRequest.then(
         (res) => {
           dispatch({
-            type: HOME_GET_CLOUD_WORDS_SUCCESS,
+            type: HOME_VOTE_SUCCESS,
             data: res,
           });
           resolve(res);
@@ -34,7 +35,7 @@ export function getCloudWords(args = {}) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         (err) => {
           dispatch({
-            type: HOME_GET_CLOUD_WORDS_FAILURE,
+            type: HOME_VOTE_FAILURE,
             data: { error: err },
           });
           reject(err);
@@ -48,44 +49,45 @@ export function getCloudWords(args = {}) {
 
 // Async action saves request error by default, this method is used to dismiss the error info.
 // If you don't want errors to be saved in Redux store, just ignore this method.
-export function dismissGetCloudWordsError() {
+export function dismissVoteError() {
   return {
-    type: HOME_GET_CLOUD_WORDS_DISMISS_ERROR,
+    type: HOME_VOTE_DISMISS_ERROR,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case HOME_GET_CLOUD_WORDS_BEGIN:
+    case HOME_VOTE_BEGIN:
       // Just after a request is sent
       return {
         ...state,
-        getCloudWordsPending: true,
-        getCloudWordsError: null,
+        votePending: true,
+        voteError: null,
+        voteSuccess:true,
       };
 
-    case HOME_GET_CLOUD_WORDS_SUCCESS:
+    case HOME_VOTE_SUCCESS:
       // The request is success
       return {
         ...state,
-        cloudWords: Object.assign([], action.data.data),
-        getCloudWordsPending: false,
-        getCloudWordsError: null,
+        votePending: false,
+        voteError: null,
+        voteSuccess:false,
       };
 
-    case HOME_GET_CLOUD_WORDS_FAILURE:
+    case HOME_VOTE_FAILURE:
       // The request is failed
       return {
         ...state,
-        getCloudWordsPending: false,
-        getCloudWordsError: action.data.error,
+        votePending: false,
+        voteError: action.data.error,
       };
 
-    case HOME_GET_CLOUD_WORDS_DISMISS_ERROR:
+    case HOME_VOTE_DISMISS_ERROR:
       // Dismiss the request failure error
       return {
         ...state,
-        getCloudWordsError: null,
+        voteError: null,
       };
 
     default:

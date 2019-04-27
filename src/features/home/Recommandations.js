@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
-import { Container, Row, Col } from 'reactstrap';
+import { Col } from 'reactstrap';
 import PosterComponent from './PosterComponent';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 
 export class Recommandations extends Component {
@@ -31,8 +30,8 @@ export class Recommandations extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    const { getSimilarItems, getRecentSerie } = this.props.actions;
-    const { showDetails } = this.props.home;
+    const { getSimilarItems } = this.props.actions;
+   
     if (nextProps.home.showDetails !== this.props.home.showDetails) {
       getSimilarItems(this.props.home.showDetails.pk).then(response => {
         this.setState({ recommandations: response.data });
@@ -42,29 +41,15 @@ export class Recommandations extends Component {
 
   render() {
     const { showDetails } = this.props.home;
-    const { clickSerieDetails } = this.props.actions;
+
     if (showDetails !== null) {
       return (
         <div class="row">
-     
-       
-            {this.state.recommandations.map((item, i) => (
+          {this.state.recommandations.map((item, i) => (
             <Col className="col-md-2 offset-md-1">
-              <PosterComponent movie={item}/>
-                {/*{item.name}
-
-                <p>
-                  <img
-                    className="img-recommandation"
-                    onClick={() => clickSerieDetails(item)}
-                    alt=""
-                    src={item.infos.Poster}
-                  />
-                </p>*/}</Col>
-             
-            ))}
-          
-     
+              <PosterComponent movie={item} />
+            </Col>
+          ))}
         </div>
       );
     } else {

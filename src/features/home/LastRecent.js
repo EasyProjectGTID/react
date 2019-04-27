@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import Slider from 'react-slick';
 import PosterComponent from './PosterComponent';
 
@@ -20,7 +20,7 @@ export class LastRecent extends Component {
 
   componentDidMount() {
     const { getRecentSerie } = this.props.actions;
-    const { showDetails } = this.props.home;
+   
 
     getRecentSerie().then(response => {
       this.setState({ lastR: response.data });
@@ -41,7 +41,7 @@ export class LastRecent extends Component {
       cssEase: 'linear',
     };
     const { showDetails } = this.props.home;
-    const { clickSerieDetails } = this.props.actions;
+
     if (showDetails == null) {
       return (
         <div className="div-container container">
@@ -50,8 +50,8 @@ export class LastRecent extends Component {
           </Row>
           <Slider className="slider" {...settings}>
             {this.state.lastR.map((item, i) => (
-              <Col className="col-md-8 offset-md-2">
-                <PosterComponent movie={item} />
+              <Col className="col-md-8 offset-md-2" key={i} >
+                <PosterComponent movie={item}  />
                 {/*<img
                   className="img-recommandation"
                   onClick={() => clickSerieDetails(item)}

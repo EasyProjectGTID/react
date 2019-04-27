@@ -3,38 +3,52 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
-import { Container, Row, Col } from 'reactstrap';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Table } from 'reactstrap';
+import { Button } from 'reactstrap';
+
+
+
 export class PosterComponent extends Component {
   static propTypes = {
     home: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       calculatedHeight: 0,
+      afficheRating: this.props.movie.afficheVote,
     };
     this.poster = React.createRef();
   }
 
   getSnapshotBeforeUpdate() {
-    console.log('snapshot', Object.assign({}, this.poster));
     return null;
   }
   componentDidMount() {
+
     setTimeout(
       () => this.setState({ calculatedHeight: this.poster.current.clientWidth * 1.5 }),
       50,
     );
-    console.log('did update', Object.assign({}, this.poster));
   }
 
+  formatToPost(args, choice){
+      this.setState({afficheRating:false})
+      const {vote} = this.props.actions
+      
+    
+      vote({args, choice})
+  }
+  
+
   render() {
-    const { clickSerieDetails } = this.props.actions;
+    const { clickSerieDetails, openModalSignOrConnect } = this.props.actions;
+    const { modalSignOrConnect, user } = this.props.home;
+    const { vote } = this.props.actions;
+    console.log(this.state.afficheRating)
     return (
       <div
         className="poster-image"
@@ -45,6 +59,7 @@ export class PosterComponent extends Component {
         }}
       >
         <div className="poster-overlay" />
+
         <div className="see">
           <div>
             <Button
@@ -52,6 +67,7 @@ export class PosterComponent extends Component {
               align="center"
               onClick={() => {
                 clickSerieDetails(this.props.movie);
+                
               }}
               color="warning"
             >
@@ -59,15 +75,55 @@ export class PosterComponent extends Component {
             </Button>
           </div>
         </div>
-        <div className="like-buttons">
-          <FontAwesomeIcon className="icon-vote" icon={faThumbsDown} size="lg" color="red" />
-          <FontAwesomeIcon className="icon-vote" icon={faThumbsUp} size="lg" color="green" />
-        </div>
-        {/*<img
-          className=""
-          src={this.props.movie.infos.Poster}
-          alt={this.props.movie.name}
-        />*/}
+
+        { this.state.afficheRating && user && (
+       
+          <div className="like-buttons">
+            <FontAwesomeIcon
+              className="icon-vote"
+              icon={faThumbsDown}
+              size="lg"
+              color="red"
+              onClick={() => {
+                this.formatToPost(this.props.movie.pk, '0');
+              }}
+            />
+            <FontAwesomeIcon
+              className="icon-vote"
+              icon={faThumbsUp}
+              size="lg"
+              color="green"
+              onClick={() => {
+                this.formatToPost(this.props.movie.pk, '1');
+              }}
+            />
+          </div>
+        )}
+
+
+        {!user && (
+          <div className="like-buttons">
+            <FontAwesomeIcon
+              className="icon-vote"
+              icon={faThumbsDown}
+              size="lg"
+              color="red"
+              onClick={() => {
+                openModalSignOrConnect(!modalSignOrConnect);
+              }}
+            />
+            <FontAwesomeIcon
+              className="icon-vote"
+              icon={faThumbsUp}
+              size="lg"
+              color="green"
+              onClick={() => {
+                openModalSignOrConnect(!modalSignOrConnect);
+              }}
+            />
+          </div>
+        )}
+
       </div>
     );
   }

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
-import ResultatComponent from './ResultatComponent';
-import { Row } from 'reactstrap';
+
+
 
 import { Container } from 'reactstrap';
 
-import { Form } from 'react-bootstrap';
-import { InputGroup, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
+
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -38,7 +38,7 @@ export class Search extends Component {
     return (
       <Container className="container-search">
        
-        <div class="input-group">
+        <div className="input-group">
           <input className="form-control py-2 border-right-0 border"  type="text"
             
             placeholder="Search"
@@ -53,8 +53,8 @@ export class Search extends Component {
                 }
               }
             }}/>
-          <span class="input-group-append">
-            <div class="input-group-text ">
+          <span className="input-group-append">
+            <div className="input-group-text ">
               <FontAwesomeIcon icon="search" />
             </div>
           </span>

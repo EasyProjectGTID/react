@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
-import { Container, Row, Col } from 'reactstrap';
-import { Button, Table } from 'reactstrap';
+import { Row } from 'reactstrap';
+import { Button} from 'reactstrap';
 import Recommandations from './Recommandations';
-import Vote from './Vote';
-import PosterComponent from './PosterComponent'
+
 
 export class SerieDetails extends Component {
   static propTypes = {

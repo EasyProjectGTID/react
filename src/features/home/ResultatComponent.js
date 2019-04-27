@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import Loader from './Loader';
 import SerieDetails from './SerieDetails';
-import { Container, Row, Col } from 'reactstrap';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import PosterComponent from './PosterComponent';
 
 export class ResultatComponent extends Component {
@@ -37,7 +36,7 @@ export class ResultatComponent extends Component {
 
   render() {
     const { resultatRecherche, showDetails } = this.props.home;
-    const { clickSerieDetails } = this.props.actions;
+ 
     if (showDetails === null) {
       return (
         <div className="div-container container">

@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Row, Col } from 'reactstrap';
-import Search from './Search';
-import Loader from './Loader';
-import Carousel from 'react-bootstrap/Carousel';
-import ResultatComponent from './ResultatComponent';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Recommandations from './Recommandations';
-import LastRecent from './LastRecent';
 
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from './redux/actions';
+
+import Search from './Search';
+import { ToastContainer, toast } from 'react-toastify';
+import ResultatComponent from './ResultatComponent';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LastRecent from './LastRecent';
 import 'bootstrap/dist/css/bootstrap.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import SignOrConnectModal from './SignOrConnectModal';
 
 
 /*
@@ -26,7 +26,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 library.add(faSearch)
 
 
-export default class App extends Component {
+export class App extends Component {
   static propTypes = {
     children: PropTypes.node,
   };
@@ -41,22 +41,40 @@ export default class App extends Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    const { registerUser } = this.props.actions
+    try {
+      const user = JSON.parse(document.querySelector('#root') && document.querySelector('#root').getAttribute('data-django'))
+      console.log('user', user)
+      registerUser(user)
+
+    }
+    catch (err) {
+      console.error('Failed to parse data', err)
+    }
+  }
+notify = (args) => toast(args);
+
+
   render() {
+    const {voteSuccess} = this.props.home
     return (
  
       <div className="container-fluid test">
+        <SignOrConnectModal></SignOrConnectModal>
+        <div className="row">
+        <ToastContainer />
+        {voteSuccess &&(this.notify("Merci d'avoir voté !"))}
         
-        <div class="row">
-       
-          <div class="col-4 col-md-4"></div>
-          <div class="col-4 col-md-4"><Search /></div>
+          <div className="col-4 col-md-4"></div>
+          <div className="col-4 col-md-4"><Search /></div>
           
-          <div class="col-4 col-md-4"></div>
+          <div className="col-4 col-md-4"></div>
         </div>
-        <div class="row justify-content-md-center">
+        <div className="row justify-content-md-center">
           <div className="scroll col-2 col-md-2" ></div>
-          <div class="centre col-8 col-md-8"><ResultatComponent /> <LastRecent /></div>
-          <div class="col-2 col-md-2 text-center "></div>
+          <div className="centre col-8 col-md-8"><ResultatComponent /> <LastRecent /></div>
+          <div className="col-2 col-md-2 text-center "></div>
         </div>
 
        
@@ -65,3 +83,21 @@ export default class App extends Component {
     );
   }
 }
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions }, dispatch),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
