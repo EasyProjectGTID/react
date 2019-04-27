@@ -12,10 +12,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import LastRecent from './LastRecent';
 import 'bootstrap/dist/css/bootstrap.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SignOrConnectModal from './SignOrConnectModal';
-
 
 /*
   This is the root component of your app. Here you define the overall layout
@@ -23,8 +22,7 @@ import SignOrConnectModal from './SignOrConnectModal';
   You should adjust it according to the requirement of your app.
 */
 
-library.add(faSearch)
-
+library.add(faSearch);
 
 export class App extends Component {
   static propTypes = {
@@ -41,45 +39,45 @@ export class App extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    const { registerUser } = this.props.actions
+  componentWillMount() {
+    const { registerUser } = this.props.actions;
     try {
-      const user = JSON.parse(document.querySelector('#root') && document.querySelector('#root').getAttribute('data-django'))
-      console.log('user', user)
-      registerUser(user)
-
-    }
-    catch (err) {
-      console.error('Failed to parse data', err)
+      const user = JSON.parse(
+        document.querySelector('#root') &&
+          document.querySelector('#root').getAttribute('data-django'),
+      );
+      console.log('user', user);
+      registerUser(user);
+    } catch (err) {
+      console.error('Failed to parse data', err);
     }
   }
-notify = (args) => toast(args);
-
+  notify = args => toast(args);
 
   render() {
-    const {voteSuccess} = this.props.home
+    const { voteSuccess } = this.props.home;
     return (
- 
       <div className="container-fluid test">
-        <SignOrConnectModal></SignOrConnectModal>
+        <SignOrConnectModal />
         <div className="row">
-        <ToastContainer />
-        {voteSuccess &&(this.notify("Merci d'avoir voté !"))}
-        
-          <div className="col-4 col-md-4"></div>
-          <div className="col-4 col-md-4"><Search /></div>
-          
-          <div className="col-4 col-md-4"></div>
+          <ToastContainer />
+          {voteSuccess && this.notify("Merci d'avoir voté !")}
+
+          <div className="col-4 col-md-4" />
+          <div className="col-4 col-md-4">
+            <Search />
+          </div>
+
+          <div className="col-4 col-md-4" />
         </div>
         <div className="row justify-content-md-center">
-          <div className="scroll col-2 col-md-2" ></div>
-          <div className="centre col-8 col-md-8"><ResultatComponent /> <LastRecent /></div>
-          <div className="col-2 col-md-2 text-center "></div>
+          <div className="scroll col-2 col-md-2" />
+          <div className="centre col-8 col-md-8">
+            <ResultatComponent /> <LastRecent />
+          </div>
+          <div className="col-2 col-md-2 text-center " />
         </div>
-
-       
       </div>
-  
     );
   }
 }

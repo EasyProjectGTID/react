@@ -16,6 +16,8 @@ export class LastRecent extends Component {
   constructor(props) {
     super(props);
     this.state = { lastR: [] };
+
+  
   }
 
   componentDidMount() {
@@ -29,7 +31,7 @@ export class LastRecent extends Component {
 
   render() {
     var settings = {
-      dots: true,
+      dots: false,
 
       infinite: true,
       speed: 250,
