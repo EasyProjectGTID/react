@@ -7,8 +7,6 @@ import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from 'reactstrap';
 
-
-
 export class PosterComponent extends Component {
   static propTypes = {
     home: PropTypes.object.isRequired,
@@ -28,27 +26,24 @@ export class PosterComponent extends Component {
     return null;
   }
   componentDidMount() {
-
     setTimeout(
       () => this.setState({ calculatedHeight: this.poster.current.clientWidth * 1.5 }),
       50,
     );
   }
 
-  formatToPost(args, choice){
-      this.setState({afficheRating:false})
-      const {vote} = this.props.actions
-      
-    
-      vote({args, choice})
+  formatToPost(args, choice) {
+    this.setState({ afficheRating: false });
+    const { vote } = this.props.actions;
+
+    vote({ args, choice });
   }
-  
 
   render() {
     const { clickSerieDetails, openModalSignOrConnect } = this.props.actions;
-    const { modalSignOrConnect, user } = this.props.home;
+    const { modalSignOrConnect, token } = this.props.home;
     const { vote } = this.props.actions;
-    console.log(this.state.afficheRating)
+    console.log(this.props.home.token, this.props.home.user)
     return (
       <div
         className="poster-image"
@@ -67,7 +62,6 @@ export class PosterComponent extends Component {
               align="center"
               onClick={() => {
                 clickSerieDetails(this.props.movie);
-                
               }}
               color="warning"
             >
@@ -76,8 +70,7 @@ export class PosterComponent extends Component {
           </div>
         </div>
 
-        { this.state.afficheRating && user && (
-       
+        {this.state.afficheRating && token && (
           <div className="like-buttons">
             <FontAwesomeIcon
               className="icon-vote"
@@ -100,8 +93,7 @@ export class PosterComponent extends Component {
           </div>
         )}
 
-
-        {!user && (
+        {!token && (
           <div className="like-buttons">
             <FontAwesomeIcon
               className="icon-vote"
@@ -123,7 +115,6 @@ export class PosterComponent extends Component {
             />
           </div>
         )}
-
       </div>
     );
   }

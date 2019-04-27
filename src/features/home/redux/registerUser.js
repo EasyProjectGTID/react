@@ -6,10 +6,10 @@ import {
   HOME_REGISTER_USER,
 } from './constants';
 
-export function registerUser(user) {
+export function registerUser(token) {
   return {
     type: HOME_REGISTER_USER,
-    payload: user,
+    payload: token,
   };
 }
 
@@ -18,7 +18,6 @@ export function reducer(state, action) {
     case HOME_REGISTER_USER:
       return {
         ...state,
-        user: action.payload.user,
         token: action.payload.token,
   
       };

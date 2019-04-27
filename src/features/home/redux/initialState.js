@@ -1,6 +1,6 @@
 const initialState = {
   token: '6e42dbe717749ffffa78179bd87f774067c59248',
-  user: 'admin',
+
   resultatRecherche: [],
 
   cloudWords: [],
