@@ -3,29 +3,26 @@
 // https://medium.com/@nate_wang/a-new-approach-for-managing-redux-actions-91c26ce8b5da
 
 import {
-  HOME_REGISTER_USER,
+  HOME_BACK_TO_COMPUTE,
 } from './constants';
 
-export function registerUser(token) {
+export function backToCompute(args) {
   return {
-    type: HOME_REGISTER_USER,
-    payload: token,
+    type: HOME_BACK_TO_COMPUTE,
+    arg: args,
+    
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case HOME_REGISTER_USER:
+    case HOME_BACK_TO_COMPUTE:
       return {
         ...state,
-        token: action.payload.token,
-        typeApp: action.payload.typeApp,
-        baseApiUrl: action.payload.base_url
-  
+        resultatCompute: action.arg
       };
 
     default:
       return state;
   }
 }
-

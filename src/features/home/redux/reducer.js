@@ -6,6 +6,10 @@ import { reducer as getRecentSerieReducer } from './getRecentSerie';
 import { reducer as openModalSignOrConnectReducer } from './openModalSignOrConnect';
 import { reducer as registerUserReducer } from './registerUser';
 import { reducer as voteReducer } from './vote';
+import { reducer as getComputeReducer } from './getCompute';
+import { reducer as getAllSeriesReducer } from './getAllSeries';
+import { reducer as backToComputeReducer } from './backToCompute';
+import { reducer as getAllSerieReducer } from './getAllSerie';
 
 const reducers = [
   searchActionReducer,
@@ -15,6 +19,10 @@ const reducers = [
   openModalSignOrConnectReducer,
   registerUserReducer,
   voteReducer,
+  getComputeReducer,
+  getAllSeriesReducer,
+  backToComputeReducer,
+  getAllSerieReducer,
 ];
 
 export default function reducer(state = initialState, action) {

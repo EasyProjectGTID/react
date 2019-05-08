@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SignOrConnectModal from './SignOrConnectModal';
-
+import RecommandCompute from './RecommandCompute'
 /*
   This is the root component of your app. Here you define the overall layout
   and the container of the react router.
@@ -55,7 +55,9 @@ export class App extends Component {
   notify = args => toast(args);
 
   render() {
-    const { voteSuccess } = this.props.home;
+
+    const { voteSuccess, typeApp } = this.props.home;
+    if(typeApp === 'search'){
     return (
       <div className="container-fluid test">
         <SignOrConnectModal />
@@ -80,6 +82,30 @@ export class App extends Component {
       </div>
     );
   }
+  
+  if(typeApp === 'recommandCompute'){
+    return(
+          <div className="container-fluid test">
+
+        <SignOrConnectModal />
+
+      <ToastContainer />
+          {voteSuccess && this.notify("Merci d'avoir voté !")}
+        <div className="row justify-content-md-center">
+
+          <div className="scroll col-2 col-md-2" />
+          <div className="centre col-8 col-md-8 col-centered">
+            <RecommandCompute />
+          </div>
+          <div className="scroll col-2 col-md-2" />
+        </div>
+        
+      </div>
+
+    )
+ 
+  }
+}
 }
 /* istanbul ignore next */
 function mapStateToProps(state) {

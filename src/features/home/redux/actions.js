@@ -5,3 +5,7 @@ export { getRecentSerie, dismissGetRecentSerieError } from './getRecentSerie';
 export { openModalSignOrConnect } from './openModalSignOrConnect';
 export { registerUser } from './registerUser';
 export { vote, dismissVoteError } from './vote';
+export { getCompute, dismissGetComputeError } from './getCompute';
+export { getAllSeries, dismissGetAllSeriesError } from './getAllSeries';
+export { backToCompute } from './backToCompute';
+export { getAllSerie, dismissGetAllSerieError } from './getAllSerie';

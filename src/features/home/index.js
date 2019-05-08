@@ -9,4 +9,8 @@ export { default as LastRecent } from './LastRecent';
 export { default as PosterComponent } from './PosterComponent';
 export { default as ModalComponent } from './ModalComponent';
 export { default as SignOrConnectModal } from './SignOrConnectModal';
+export { default as CloudWord } from './CloudWord';
+export { default as RecommandCompute } from './RecommandCompute';
+export { default as Footer } from './Footer';
+export { default as Resultat } from './Resultat';
 
