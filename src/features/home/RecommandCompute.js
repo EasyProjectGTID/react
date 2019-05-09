@@ -27,10 +27,14 @@ class Recommand extends Component {
     return arr.filter(v => v !== value)
   }
 
-  handleChange(event) {
+  handleChange(pk, action, isLiked, isDisliked) {
     var series = Object.assign({}, this.state.series);
+    const toUpdate = action === 'like' ? {likeChecked: true, dislikeChecked: false} : {likeChecked: false, dislikeChecked: true}
+    series[pk] = Object.assign(series[pk], toUpdate)
 
-    if (event.target.name === 'likeChecked') {
+    this.setState({series})
+
+  /*if (event.target.name === 'likeChecked') {
       console.log('Jai coché like')
       if (series[event.target.value]['dislikeChecked'] === !event.target.value) {
         console.log('Je passe ici car dans mon state jai dislikeChecked qui est égale à linverse de la valeur coché')
@@ -75,7 +79,7 @@ class Recommand extends Component {
         let newD = this.removeByValue(newLike, event.target.value);
         this.setState({ series: series, like: newD,  dislike: [...this.state.dislike, event.target.value]});
       }
-    }
+    }*/
   }
 
   componentWillMount() {
@@ -128,7 +132,7 @@ class Recommand extends Component {
                   className="form-control"
                   name="likeChecked"
                   checked={this.state.series[item].likeChecked}
-                  onClick={this.handleChange}
+                  onClick={() => this.handleChange(item, 'like', this.state.series[item].likeChecked, this.state.series[item].dislikeChecked)}
                 />
               </div>
             </div>
@@ -143,13 +147,13 @@ class Recommand extends Component {
                   name="dislikeChecked"
                   className="form-control"
                   checked={this.state.series[item].dislikeChecked}
-                  onClick={this.handleChange}
+                  onClick={() => this.handleChange(item, 'dislike', this.state.series[item].likeChecked, this.state.series[item].dislikeChecked)}
                 />
               </div>
             </div>
           </div>
         ))}
-        <Footer like={this.state.like} dislike={this.state.dislike} />
+        <Footer like={this.state.like} dislike={this.state.dislike} series={this.state.series} />
       </div>
     );} else{
       return(<div><Resultat /></div>)

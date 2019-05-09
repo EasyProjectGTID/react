@@ -1,17 +1,17 @@
 import {
-  HOME_GET_COMPUTE_BEGIN,
-  HOME_GET_COMPUTE_SUCCESS,
-  HOME_GET_COMPUTE_FAILURE,
-  HOME_GET_COMPUTE_DISMISS_ERROR,
+  HOME_GET_MY_VOTE_COMPUTE_BEGIN,
+  HOME_GET_MY_VOTE_COMPUTE_SUCCESS,
+  HOME_GET_MY_VOTE_COMPUTE_FAILURE,
+  HOME_GET_MY_VOTE_COMPUTE_DISMISS_ERROR,
 } from './constants';
 import httpService from '../../../services/httpService';
 
 // Rekit uses redux-thunk for async actions by default: https://github.com/gaearon/redux-thunk
 // If you prefer redux-saga, you can use rekit-plugin-redux-saga: https://github.com/supnate/rekit-plugin-redux-saga
-export function getCompute(args = {}) {
+export function getMyVoteCompute(args = {}) {
   return (dispatch, getState) => { // optionally you can have getState as the second argument
     dispatch({
-      type: HOME_GET_COMPUTE_BEGIN,
+      type: HOME_GET_MY_VOTE_COMPUTE_BEGIN,
     });
 
     // Return a promise so that you could control UI flow without states in the store.
@@ -22,11 +22,11 @@ export function getCompute(args = {}) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = httpService(getState().home.token).post(getState().home.baseApiUrl+ 'recommand-api', {'pk':args});
+      const doRequest = httpService(getState().home.token).get(getState().home.baseApiUrl +'mesvotescompute')
       doRequest.then(
         (res) => {
           dispatch({
-            type: HOME_GET_COMPUTE_SUCCESS,
+            type: HOME_GET_MY_VOTE_COMPUTE_SUCCESS,
             data: res,
           });
           resolve(res);
@@ -34,7 +34,7 @@ export function getCompute(args = {}) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         (err) => {
           dispatch({
-            type: HOME_GET_COMPUTE_FAILURE,
+            type: HOME_GET_MY_VOTE_COMPUTE_FAILURE,
             data: { error: err },
           });
           reject(err);
@@ -48,45 +48,43 @@ export function getCompute(args = {}) {
 
 // Async action saves request error by default, this method is used to dismiss the error info.
 // If you don't want errors to be saved in Redux store, just ignore this method.
-export function dismissGetComputeError() {
+export function dismissGetMesVotesError() {
   return {
-    type: HOME_GET_COMPUTE_DISMISS_ERROR,
+    type: HOME_GET_MY_VOTE_COMPUTE_DISMISS_ERROR,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case HOME_GET_COMPUTE_BEGIN:
+    case HOME_GET_MY_VOTE_COMPUTE_BEGIN:
       // Just after a request is sent
       return {
         ...state,
-        getComputePending: true,
-        getComputeError: null,
+        getMesVotesPending: true,
+        getMesVotesError: null,
       };
 
-    case HOME_GET_COMPUTE_SUCCESS:
+    case HOME_GET_MY_VOTE_COMPUTE_SUCCESS:
       // The request is success
       return {
         ...state,
-        getComputePending: false,
-        getComputeError: null,
-        resultatCompute: action.data.data,
-
+        getMesVotesPending: false,
+        getMesVotesError: null,
       };
 
-    case HOME_GET_COMPUTE_FAILURE:
+    case HOME_GET_MY_VOTE_COMPUTE_FAILURE:
       // The request is failed
       return {
         ...state,
-        getComputePending: false,
-        getComputeError: action.data.error,
+        getMesVotesPending: false,
+        getMesVotesError: action.data.error,
       };
 
-    case HOME_GET_COMPUTE_DISMISS_ERROR:
+    case HOME_GET_MY_VOTE_COMPUTE_DISMISS_ERROR:
       // Dismiss the request failure error
       return {
         ...state,
-        getComputeError: null,
+        getMesVotesError: null,
       };
 
     default:

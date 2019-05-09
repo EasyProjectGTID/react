@@ -13,4 +13,5 @@ export { default as CloudWord } from './CloudWord';
 export { default as RecommandCompute } from './RecommandCompute';
 export { default as Footer } from './Footer';
 export { default as Resultat } from './Resultat';
+export { default as MesVotes } from './MesVotes';
 

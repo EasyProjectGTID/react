@@ -1,8 +1,8 @@
 const initialState = {
-  token: "378fedb04ce25a5fc9516ccf873cc9451dd6ae38",
+  token: "af15872defd6cb78e2dad2573ebaa6a90ffedc22",
   baseApiUrl: 'http://127.0.0.1:8000/',
   resultatRecherche: [],
-  typeApp: 'recommandCompute',
+  typeApp: 'mesVotes',
   cloudWords: [],
   resultatCompute: [],
   allSeries: {},
@@ -19,6 +19,12 @@ const initialState = {
   getAllSerieError: null,
   getComputePending: false,
   getComputeError: null,
+  getMyUserVotePending: false,
+  getMyUserVoteError: null,
+  getMyVoteComputePending: false,
+  getMyVoteComputeError: null,
+  deleteVotePending: false,
+  deleteVoteError: null,
 
 
 };

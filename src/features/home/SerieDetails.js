@@ -15,8 +15,9 @@ export class SerieDetails extends Component {
   };
 
   render() {
-    const { showDetails } = this.props.home;
+    const { showDetails, typeApp } = this.props.home;
     const { clickSerieDetails } = this.props.actions;
+    
     return (
       <div className="container tutu">
       
@@ -82,7 +83,8 @@ export class SerieDetails extends Component {
           </div>
           
         </div>
-        <Recommandations />
+        {typeApp != 'mesVotes' &&
+        <Recommandations />}
       </div>
     );
   }

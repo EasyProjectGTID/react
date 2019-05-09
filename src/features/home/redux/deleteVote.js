@@ -1,16 +1,17 @@
 import {
-  HOME_GET_ALL_SERIES_BEGIN,
-  HOME_GET_ALL_SERIES_SUCCESS,
-  HOME_GET_ALL_SERIES_FAILURE,
-  HOME_GET_ALL_SERIES_DISMISS_ERROR,
+  HOME_DELETE_VOTE_BEGIN,
+  HOME_DELETE_VOTE_SUCCESS,
+  HOME_DELETE_VOTE_FAILURE,
+  HOME_DELETE_VOTE_DISMISS_ERROR,
 } from './constants';
+import httpService from '../../../services/httpService';
 
 // Rekit uses redux-thunk for async actions by default: https://github.com/gaearon/redux-thunk
 // If you prefer redux-saga, you can use rekit-plugin-redux-saga: https://github.com/supnate/rekit-plugin-redux-saga
-export function getAllSeries(args = {}) {
-  return (dispatch) => { // optionally you can have getState as the second argument
+export function deleteVote(args = {}) {
+  return (dispatch, getState) => { // optionally you can have getState as the second argument
     dispatch({
-      type: HOME_GET_ALL_SERIES_BEGIN,
+      type: HOME_DELETE_VOTE_BEGIN,
     });
 
     // Return a promise so that you could control UI flow without states in the store.
@@ -21,11 +22,12 @@ export function getAllSeries(args = {}) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = args.error ? Promise.reject(new Error()) : Promise.resolve();
+      const doRequest = httpService(getState().home.token).delete(getState().home.baseApiUrl +'MyUserVote/' + args +'/')
+      console.log(args)
       doRequest.then(
         (res) => {
           dispatch({
-            type: HOME_GET_ALL_SERIES_SUCCESS,
+            type: HOME_DELETE_VOTE_SUCCESS,
             data: res,
           });
           resolve(res);
@@ -33,7 +35,7 @@ export function getAllSeries(args = {}) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         (err) => {
           dispatch({
-            type: HOME_GET_ALL_SERIES_FAILURE,
+            type: HOME_DELETE_VOTE_FAILURE,
             data: { error: err },
           });
           reject(err);
@@ -47,43 +49,43 @@ export function getAllSeries(args = {}) {
 
 // Async action saves request error by default, this method is used to dismiss the error info.
 // If you don't want errors to be saved in Redux store, just ignore this method.
-export function dismissGetAllSeriesError() {
+export function dismissDeleteVoteError() {
   return {
-    type: HOME_GET_ALL_SERIES_DISMISS_ERROR,
+    type: HOME_DELETE_VOTE_DISMISS_ERROR,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case HOME_GET_ALL_SERIES_BEGIN:
+    case HOME_DELETE_VOTE_BEGIN:
       // Just after a request is sent
       return {
         ...state,
-        getAllSeriesPending: true,
-        getAllSeriesError: null,
+        deleteVotePending: true,
+        deleteVoteError: null,
       };
 
-    case HOME_GET_ALL_SERIES_SUCCESS:
+    case HOME_DELETE_VOTE_SUCCESS:
       // The request is success
       return {
         ...state,
-        getAllSeriesPending: false,
-        getAllSeriesError: null,
+        deleteVotePending: false,
+        deleteVoteError: null,
       };
 
-    case HOME_GET_ALL_SERIES_FAILURE:
+    case HOME_DELETE_VOTE_FAILURE:
       // The request is failed
       return {
         ...state,
-        getAllSeriesPending: false,
-        getAllSeriesError: action.data.error,
+        deleteVotePending: false,
+        deleteVoteError: action.data.error,
       };
 
-    case HOME_GET_ALL_SERIES_DISMISS_ERROR:
+    case HOME_DELETE_VOTE_DISMISS_ERROR:
       // Dismiss the request failure error
       return {
         ...state,
-        getAllSeriesError: null,
+        deleteVoteError: null,
       };
 
     default:

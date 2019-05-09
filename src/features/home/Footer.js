@@ -11,17 +11,20 @@ export class Footer extends Component {
     actions: PropTypes.object.isRequired,
   };
 
-  formatToPost(like, dislike) {
+  formatToPost(like, dislike, series) {
     this.setState({ afficheRating: false });
     const { getCompute } = this.props.actions;
 
-    getCompute({ like, dislike });
+    const likeList = Object.keys(series).filter(pk => series[pk]['likeChecked']).map(v => v)
+    const dislikeList = Object.keys(series).filter(pk => series[pk]['dislikeChecked']).map(v => v)
+
+    getCompute({ like: likeList, dislike: dislikeList });
   }
 
   render() {
     return (
       <div className="home-footer row justify-content-center">
-        <button type="button" onClick={() => {this.formatToPost(this.props.like, this.props.dislike)}} align="center" className="btn btn-warning">Obtenir des recommandations</button>
+        <button type="button" onClick={() => {this.formatToPost(this.props.like, this.props.dislike, this.props.series)}} align="center" className="btn btn-warning">Obtenir des recommandations</button>
       </div>
     );
   }
