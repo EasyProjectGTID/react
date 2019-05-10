@@ -7,6 +7,8 @@ import Loader from './Loader';
 import SerieDetails from './SerieDetails';
 import { Row, Col } from 'reactstrap';
 import PosterComponent from './PosterComponent';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class ResultatComponent extends Component {
   static propTypes = {
@@ -34,15 +36,28 @@ export class ResultatComponent extends Component {
     }
   }
 
+  closeResultat() {
+    const { closeResultat } = this.props.actions;
+    closeResultat();
+  }
+
   render() {
     const { resultatRecherche, showDetails } = this.props.home;
- 
+
     if (showDetails === null) {
       return (
         <div className="div-container container">
           {this.renderText()}
 
           <Row className="home-resultat-component">
+            {resultatRecherche.length !== 0 && (
+              <FontAwesomeIcon
+                className="icon-close"
+                icon={faWindowClose}
+                size="2x"
+                onClick={() => this.closeResultat()}
+              />
+            )}
             {this.props.home.searchActionPending && (
               <Col align="center">
                 <Loader className="search-loader" />

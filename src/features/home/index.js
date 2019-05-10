@@ -7,7 +7,6 @@ export { default as SerieDetails } from './SerieDetails';
 export { default as Recommandations } from './Recommandations';
 export { default as LastRecent } from './LastRecent';
 export { default as PosterComponent } from './PosterComponent';
-export { default as ModalComponent } from './ModalComponent';
 export { default as SignOrConnectModal } from './SignOrConnectModal';
 export { default as CloudWord } from './CloudWord';
 export { default as RecommandCompute } from './RecommandCompute';

@@ -41,6 +41,7 @@ export class SignOrConnectModal extends Component {
   }
 
   render() {
+    const {baseApiUrl} = this.props.home
     return (
       <div>
         <Modal show={this.state.show} onHide={this.handleClose}>
@@ -55,11 +56,11 @@ export class SignOrConnectModal extends Component {
           </Modal.Body>
           <Modal.Footer>
             <Col>
-              <Button variant="warning">Inscription</Button>
+              <Button variant="warning"><a href={baseApiUrl + "register"}>Inscription</a></Button>
             </Col>
             <Col />
             <Col>
-              <Button variant="warning">Connexion</Button>
+              <Button variant="warning"><a href={baseApiUrl + "login"}>Connexion</a></Button>
             </Col>
           </Modal.Footer>
         </Modal>

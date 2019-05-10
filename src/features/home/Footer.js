@@ -17,7 +17,7 @@ export class Footer extends Component {
 
     const likeList = Object.keys(series).filter(pk => series[pk]['likeChecked']).map(v => v)
     const dislikeList = Object.keys(series).filter(pk => series[pk]['dislikeChecked']).map(v => v)
-
+    console.log(likeList,dislikeList )
     getCompute({ like: likeList, dislike: dislikeList });
   }
 

@@ -17,7 +17,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SignOrConnectModal from './SignOrConnectModal';
 import RecommandCompute from './RecommandCompute';
 import MesVotes from './MesVotes';
-import DefaultPages from '../vote/DefaultPage'
+import CloudWord from './CloudWord'
 /*
   This is the root component of your app. Here you define the overall layout
   and the container of the react router.
@@ -48,17 +48,18 @@ export class App extends Component {
         document.querySelector('#root') &&
           document.querySelector('#root').getAttribute('data-django'),
       );
-      console.log(user)
-   
+      console.log(user);
+
       registerUser(user);
     } catch (err) {
       console.error('Failed to parse data', err);
     }
   }
+
   notify = args => toast(args);
 
   render() {
-    const { voteSuccess, typeApp } = this.props.home;
+    const { voteSuccess, typeApp, deleteVoteSuccess } = this.props.home;
     if (typeApp === 'search') {
       return (
         <div className="container-fluid test">
@@ -89,11 +90,10 @@ export class App extends Component {
       return (
         <div className="container-fluid test">
           <SignOrConnectModal />
-          
+
           <ToastContainer />
           {voteSuccess && this.notify("Merci d'avoir voté !")}
           <div className="row justify-content-md-center">
-       
             <div className="scroll col-2 col-md-2" />
             <div className="centre col-8 col-md-8 col-centered">
               <RecommandCompute />
@@ -102,27 +102,46 @@ export class App extends Component {
           </div>
         </div>
       );
-    } 
+    }
     if (typeApp === 'mesVotes') {
       return (
         <div className="container-fluid test">
-        
-          <SignOrConnectModal />
+          <ToastContainer>
+            {' '}
+            {deleteVoteSuccess && this.notify('Suppression Enregistrée')}{' '}
+            {voteSuccess && this.notify("Merci d'avoir voté !")}
+          </ToastContainer>
+     
 
-          <ToastContainer />
-          {voteSuccess && this.notify("Merci d'avoir voté !")}
           <div className="row justify-content-md-center">
             <div className="scroll col-2 col-md-2" />
             <div className="centre col-8 col-md-8 col-centered">
-            <ResultatComponent />
-              <MesVotes/>
+              <ResultatComponent />
+        
             </div>
             <div className="scroll col-2 col-md-2" />
           </div>
         </div>
-      )}
-    else{
-      return(<div></div>)
+      );
+    }
+
+    if (typeApp === 'populaire') {
+      return (
+        <div className="container-fluid test">
+          <SignOrConnectModal />
+
+          <div className="row justify-content-md-center">
+            <div className="scroll col-2 col-md-2" />
+            <div className="centre col-8 col-md-8 col-centered">
+              <ResultatComponent />
+              <CloudWord />
+            </div>
+            <div className="scroll col-2 col-md-2" />
+          </div>
+        </div>
+      );
+    } else {
+      return <div />;
     }
   }
 }

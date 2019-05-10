@@ -11,3 +11,5 @@ export { getAllSerie, dismissGetAllSerieError } from './getAllSerie';
 export { getMyUserVote, dismissGetMyUserVoteError } from './getMyUserVote';
 export { getMyVoteCompute, dismissGetMyVoteComputeError } from './getMyVoteCompute';
 export { deleteVote, dismissDeleteVoteError } from './deleteVote';
+export { searchCount, dismissSearchCountError } from './searchCount';
+export { closeResultat } from './closeResultat';

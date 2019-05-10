@@ -31,12 +31,20 @@ export class PosterComponent extends Component {
       50,
     );
   }
-
+componentDidUpdate(prevProps, prevState) {
+  if(prevProps.movie.afficheVote !== this.state.afficheRating){
+    this.setState({afficheRating: this.props.movie.afficheVote})
+  }
+}
   formatToPost(args, choice) {
+    const { isMyVotesComponent } = this.props
     this.setState({ afficheRating: false });
     const { vote } = this.props.actions;
-
-    vote({ args, choice });
+    vote({ args, choice }).then(
+      () => {
+        isMyVotesComponent && this.props.onVoteCallback()
+      }
+    ).catch(err => console.error(err))
   }
 
   render() {

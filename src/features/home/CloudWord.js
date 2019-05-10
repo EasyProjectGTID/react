@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { TagCloud } from "react-tagcloud";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from './redux/actions';
 
 const data = [
   { value: "jQuery", count: 25 }, { value: "MongoDB", count: 18 },
@@ -13,21 +16,69 @@ const data = [
   { value: "Flow", count: 30 }, { value: "NPM", count: 11 },
 ];
 
-export default class CloudWord extends Component {
+export class CloudWord extends Component {
   static propTypes = {
 
   };
 
+    constructor(props) {
+    super(props);
+
+    this.state = { searchCount: [] };
+  }
+
+componentWillMount() {
+    const { searchCount } = this.props.actions;
+
+
+      searchCount().then(response => {
+        this.setState({ searchCount: response.data });
+      });
+    
+  }
+
+  searchWord(value){
+    const {searchAction} = this.props.actions
+    searchAction(value)
+  }
+
   render() {
     return (
+      <div>
+      <div className="row justify-content-md-center">Les mots les plus recherchés</div>
+      <div className="row justify-content-md-center">
+      
       <div className="home-cloud-word">
         <TagCloud minSize={12}
-            maxSize={35}
-            tags={data}
+            maxSize={50}
+            tags={this.state.searchCount}
             className="simple-cloud"
-            onClick={tag => alert(`'${tag.value}' was selected!`)} />
-);
+            shuffle={true}
+            onClick={tag => this.searchWord(tag.value)} />
+
+      </div>
+      </div>
       </div>
     );
   }
 }
+
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions }, dispatch),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CloudWord);
+

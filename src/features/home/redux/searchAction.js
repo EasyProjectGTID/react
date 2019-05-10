@@ -23,7 +23,7 @@ export function searchAction(args = {}) {
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
       
-      const doRequest = httpService(getState().home.token).get(ip +':8000/recherche?keywords=' + args)
+      const doRequest = httpService(getState().home.token).get(getState().home.baseApiUrl +'recherche?keywords=' + args)
       doRequest.then(
         (res) => {
           dispatch({

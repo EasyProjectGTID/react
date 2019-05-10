@@ -63,6 +63,7 @@ export function reducer(state, action) {
         ...state,
         deleteVotePending: true,
         deleteVoteError: null,
+        deleteVoteSuccess:true,
       };
 
     case HOME_DELETE_VOTE_SUCCESS:
@@ -71,6 +72,7 @@ export function reducer(state, action) {
         ...state,
         deleteVotePending: false,
         deleteVoteError: null,
+        deleteVoteSuccess:false,
       };
 
     case HOME_DELETE_VOTE_FAILURE:

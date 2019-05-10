@@ -24,25 +24,35 @@ export class MesVotes extends Component {
     const { getMyVoteCompute, getMyUserVote } = this.props.actions;
     const { showDetails } = this.props.home;
 
-    getMyUserVote().then(response => {
-      this.setState({ myVote: response.data });
-    });
-
     if (showDetails === null) {
-      getMyVoteCompute().then(response => {
-        this.setState({ resultat: response.data });
-      });
+     this.computeVoteThenUpdate()
     }
   }
 
   handleClick(pk){
-    const {deleteVote} = this.props.actions
-    deleteVote(pk)
+    const {deleteVote, getMyVoteCompute} = this.props.actions
+    deleteVote(pk).then(
+      () =>   this.computeVoteThenUpdate()
+    ).catch( err => console.error(err))
     const newState = this.state.myVote
     const newS = newState.filter(v => v.pk !== pk)
+    /*getMyVoteCompute().then(response => {
+        this.setState({ resultat: response.data });
+      });*/
     this.setState({myVote: newS})
 
   }
+
+  computeVoteThenUpdate() {
+    const {getMyVoteCompute, getMyUserVote} = this.props.actions
+    getMyVoteCompute().then(response => {
+        this.setState({ resultat: response.data });
+      }).catch( err => console.error(err))
+    getMyUserVote().then(response => {
+      this.setState({ myVote: response.data });
+    });
+  }
+
 
   render() {
     const { showDetails } = this.props.home;
@@ -86,7 +96,11 @@ export class MesVotes extends Component {
           <Row className="row justify-content-center ">
             {this.state.resultat.map((item, i) => (
               <Col className="col-md-2 col-md-pull-15" id={item.name}>
-                <PosterComponent movie={item} />
+                <PosterComponent 
+                  movie={item} 
+                  isMyVotesComponent={true}
+                  onVoteCallback={() => this.computeVoteThenUpdate()}
+                  />
               </Col>
             ))}
           </Row>

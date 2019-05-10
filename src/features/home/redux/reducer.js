@@ -12,6 +12,8 @@ import { reducer as getAllSerieReducer } from './getAllSerie';
 import { reducer as getMyUserVoteReducer } from './getMyUserVote';
 import { reducer as getMyVoteComputeReducer } from './getMyVoteCompute';
 import { reducer as deleteVoteReducer } from './deleteVote';
+import { reducer as searchCountReducer } from './searchCount';
+import { reducer as closeResultatReducer } from './closeResultat';
 
 const reducers = [
   searchActionReducer,
@@ -27,6 +29,8 @@ const reducers = [
   getMyUserVoteReducer,
   getMyVoteComputeReducer,
   deleteVoteReducer,
+  searchCountReducer,
+  closeResultatReducer,
 ];
 
 export default function reducer(state = initialState, action) {
