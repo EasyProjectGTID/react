@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { DefaultPage } from '../../../src/features/vote/DefaultPage';
+import { Upload } from '../../../src/features/home/Upload';
 
-describe('vote/DefaultPage', () => {
+describe('home/Upload', () => {
   it('renders node with correct class name', () => {
     const props = {
-      vote: {},
+      home: {},
       actions: {},
     };
     const renderedComponent = shallow(
-      <DefaultPage {...props} />
+      <Upload {...props} />
     );
 
     expect(
-      renderedComponent.find('.vote-default-page').length
+      renderedComponent.find('.home-upload').length
     ).toBe(1);
   });
 });

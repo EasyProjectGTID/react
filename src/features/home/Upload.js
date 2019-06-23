@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
+import {useDropzone} from 'react-dropzone'
 
-export class DefaultPage extends Component {
+export class Upload extends Component {
   static propTypes = {
-    vote: PropTypes.object.isRequired,
+    home: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
   render() {
-    const {token} = this.props.home
     return (
-      <div className="vote-default-page">
-        Page Content: vote/DefaultPage {token}
+      <div className="home-upload">
+        Page Content: home/Upload
       </div>
     );
   }
@@ -23,8 +23,7 @@ export class DefaultPage extends Component {
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
-    vote: state.vote,
-    home: state.home
+    home: state.home,
   };
 }
 
@@ -38,4 +37,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DefaultPage);
+)(Upload);

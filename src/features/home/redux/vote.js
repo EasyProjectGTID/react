@@ -23,7 +23,7 @@ export function vote(args = {}) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      const doRequest = httpService(getState().home.token).post(ip+ ':8000/vote', args, 'toto');
+      const doRequest = httpService(getState().home.token).post(getState().home.baseApiUrl + 'vote', args, 'toto');
       doRequest.then(
         (res) => {
           dispatch({

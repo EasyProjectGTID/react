@@ -17,7 +17,10 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SignOrConnectModal from './SignOrConnectModal';
 import RecommandCompute from './RecommandCompute';
 import MesVotes from './MesVotes';
-import CloudWord from './CloudWord'
+import CloudWord from './CloudWord';
+
+
+
 /*
   This is the root component of your app. Here you define the overall layout
   and the container of the react router.
@@ -45,8 +48,7 @@ export class App extends Component {
     const { registerUser } = this.props.actions;
     try {
       const user = JSON.parse(
-        document.querySelector('#root') &&
-          document.querySelector('#root').getAttribute('data-django'),
+        document.querySelector('#root').getAttribute('data-django') && document.querySelector('#root'),
       );
       console.log(user);
 
@@ -63,6 +65,7 @@ export class App extends Component {
     if (typeApp === 'search') {
       return (
         <div className="container-fluid test">
+          <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet" />
           <SignOrConnectModal />
           <div className="row">
             <ToastContainer />
@@ -89,6 +92,7 @@ export class App extends Component {
     if (typeApp === 'recommandCompute') {
       return (
         <div className="container-fluid test">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet" />
           <SignOrConnectModal />
 
           <ToastContainer />
@@ -106,18 +110,18 @@ export class App extends Component {
     if (typeApp === 'mesVotes') {
       return (
         <div className="container-fluid test">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet" />
           <ToastContainer>
             {' '}
             {deleteVoteSuccess && this.notify('Suppression Enregistrée')}{' '}
             {voteSuccess && this.notify("Merci d'avoir voté !")}
           </ToastContainer>
-     
 
           <div className="row justify-content-md-center">
             <div className="scroll col-2 col-md-2" />
             <div className="centre col-8 col-md-8 col-centered">
               <ResultatComponent />
-        
+              <MesVotes />
             </div>
             <div className="scroll col-2 col-md-2" />
           </div>
@@ -128,6 +132,7 @@ export class App extends Component {
     if (typeApp === 'populaire') {
       return (
         <div className="container-fluid test">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet" />
           <SignOrConnectModal />
 
           <div className="row justify-content-md-center">
@@ -140,7 +145,9 @@ export class App extends Component {
           </div>
         </div>
       );
-    } else {
+    }
+
+     else {
       return <div />;
     }
   }

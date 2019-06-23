@@ -3,6 +3,48 @@
   <component name="ChangeListManager">
     <list default="true" id="4e94a6a0-9e9a-41aa-aec6-326073539faa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/routeConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/routeConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/App.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/App.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/CloudWord.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/CloudWord.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/CloudWord.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/CloudWord.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/LastRecent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/LastRecent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/LastRecent.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/LastRecent.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/MesVotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/MesVotes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/MesVotes.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/MesVotes.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/PosterComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/PosterComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/Recommandations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/Recommandations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/ResultatComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/ResultatComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/ResultatComponent.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/ResultatComponent.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/SerieDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/SerieDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/SerieDetails.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/SerieDetails.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/redux/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/redux/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/redux/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/redux/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/redux/initialState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/redux/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/redux/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/redux/searchAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/redux/searchAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/redux/vote.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/redux/vote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/slick-theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/slick-theme.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/slick.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/slick.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/home/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/home/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/DefaultPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/DefaultPage.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/redux/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/redux/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/redux/initialState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/redux/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/vote/style.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/features/vote/DefaultPage.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/features/vote/redux/reducer.test.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +68,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/webpack.config.prod.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="1105">
               <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/features/home/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="43" lean-forward="true" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -45,6 +96,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>main</find>
+      <find>slick</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -82,7 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -90,10 +141,28 @@
               <item name="react-git" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-git" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-git" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-git" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-git" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -131,6 +200,9 @@
       <updated>1556306686628</updated>
       <workItem from="1556306689316" duration="547000" />
       <workItem from="1557309629951" duration="103000" />
+      <workItem from="1557522189882" duration="49000" />
+      <workItem from="1559470720949" duration="235000" />
+      <workItem from="1559471545053" duration="636000" />
     </task>
     <task id="LOCAL-00001" summary="Migration des deux app en une avec systeme de router simplifié">
       <created>1557309704950</created>
@@ -139,17 +211,24 @@
       <option name="project" value="LOCAL" />
       <updated>1557309704950</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit de sauvegarde">
+      <created>1557522226109</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557522226109</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="650000" />
+    <option name="totallyTimeSpent" value="1570000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1974" y="30" width="1866" height="1050" extended-state="6" />
+    <frame x="1968" y="28" width="1872" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25330397" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2628979" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -165,12 +244,12 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Redis Servers" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Redis Servers" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,10 +280,25 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Migration des deux app en une avec systeme de router simplifié" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migration des deux app en une avec systeme de router simplifié" />
+    <MESSAGE value="Commit de sauvegarde" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit de sauvegarde" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/env.js">
@@ -217,13 +311,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/paths.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/webpack.config.prod.js">
+    <entry file="file://$PROJECT_DIR$/src/features/home/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        <state relative-caret-position="51">
+          <caret line="3" column="43" lean-forward="true" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
         </state>
       </provider>
     </entry>

@@ -7,10 +7,6 @@ import * as actions from './redux/actions';
 
 
 import { Container } from 'reactstrap';
-
-
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class Search extends Component {
@@ -21,8 +17,8 @@ export class Search extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = { searchText: '', resultatState: [], focus: false };
+    const {searchText2} = this.props.home.searchText
+    this.state = { searchText: searchText2, resultatState: [], focus: false };
   }
 
   focus = event => {
@@ -33,13 +29,13 @@ export class Search extends Component {
   };
 
   render() {
-    const { searchAction } = this.props.actions;
-
+    const { searchAction, searchTextUpdate } = this.props.actions;
+    const {searchText} = this.props.home;
     return (
       <Container className="container-search">
        
         <div className="input-group">
-          <input className="form-control py-2 border-right-0 border"  type="text"
+          {/*<input className="form-control py-2 border-right-0 border"  type="text"
             
             placeholder="Search"
             onChange={event => {
@@ -50,6 +46,20 @@ export class Search extends Component {
                 this.setState({ resultatState: [] });
                 if (this.state.searchText.length !== 0) {
                   searchAction(this.state.searchText);
+                }
+              }
+            }}/>*/}
+            <input className="form-control py-2 border-right-0 border"  type="text"
+            value={searchText}
+            placeholder="Search"
+            onChange={event => {
+             searchTextUpdate(event.target.value)
+            }}
+            onKeyPress={event => {
+              if (event.key === 'Enter') {
+                this.setState({ resultatState: [] });
+                if (searchText.length !== 0) {
+                  searchAction(searchText);
                 }
               }
             }}/>

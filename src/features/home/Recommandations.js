@@ -44,9 +44,10 @@ export class Recommandations extends Component {
 
     if (showDetails !== null) {
       return (
-        <div class="row">
+        <div class="row justify-content-md-center">
+        
           {this.state.recommandations.map((item, i) => (
-            <Col className="col-md-2 offset-md-1">
+            <Col className="col-md-2 " key={i}>
               <PosterComponent movie={item} />
             </Col>
           ))}

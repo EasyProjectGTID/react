@@ -14,6 +14,11 @@ import { reducer as getMyVoteComputeReducer } from './getMyVoteCompute';
 import { reducer as deleteVoteReducer } from './deleteVote';
 import { reducer as searchCountReducer } from './searchCount';
 import { reducer as closeResultatReducer } from './closeResultat';
+import { reducer as getMostLikedReducer } from './getMostLiked';
+import { reducer as getWordsOfSerieReducer } from './getWordsOfSerie';
+import { reducer as uploadSerieReducer } from './uploadSerie';
+import { reducer as searchTextUpdateReducer } from './searchTextUpdate';
+import { reducer as totoReducer } from './toto';
 
 const reducers = [
   searchActionReducer,
@@ -31,6 +36,11 @@ const reducers = [
   deleteVoteReducer,
   searchCountReducer,
   closeResultatReducer,
+  getMostLikedReducer,
+  getWordsOfSerieReducer,
+  uploadSerieReducer,
+  searchTextUpdateReducer,
+  totoReducer,
 ];
 
 export default function reducer(state = initialState, action) {

@@ -13,3 +13,8 @@ export { getMyVoteCompute, dismissGetMyVoteComputeError } from './getMyVoteCompu
 export { deleteVote, dismissDeleteVoteError } from './deleteVote';
 export { searchCount, dismissSearchCountError } from './searchCount';
 export { closeResultat } from './closeResultat';
+export { getMostLiked, dismissGetMostLikedError } from './getMostLiked';
+export { getWordsOfSerie, dismissGetWordsOfSerieError } from './getWordsOfSerie';
+export { uploadSerie, dismissUploadSerieError } from './uploadSerie';
+export { searchTextUpdate } from './searchTextUpdate';
+export { toto, dismissTotoError } from './toto';

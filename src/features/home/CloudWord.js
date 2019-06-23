@@ -1,65 +1,79 @@
 import React, { Component } from 'react';
-import { TagCloud } from "react-tagcloud";
+import { TagCloud } from 'react-tagcloud';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 
-const data = [
-  { value: "jQuery", count: 25 }, { value: "MongoDB", count: 18 },
-  { value: "JavaScript", count: 38 }, { value: "React", count: 30 },
-  { value: "Nodejs", count: 28 }, { value: "Express.js", count: 25 },
-  { value: "HTML5", count: 33 }, { value: "CSS3", count: 20 },
-  { value: "Webpack", count: 22 }, { value: "Babel.js", count: 7 },
-  { value: "ECMAScript", count: 25 }, { value: "Jest", count: 15 },
-  { value: "Mocha", count: 17 }, { value: "React Native", count: 27 },
-  { value: "Angular.js", count: 30 }, { value: "TypeScript", count: 15 },
-  { value: "Flow", count: 30 }, { value: "NPM", count: 11 },
-];
+
 
 export class CloudWord extends Component {
-  static propTypes = {
+  static propTypes = {};
 
-  };
-
-    constructor(props) {
+  constructor(props) {
     super(props);
 
-    this.state = { searchCount: [] };
+    this.state = { searchCount: [], mostLiked: [] };
   }
 
-componentWillMount() {
-    const { searchCount } = this.props.actions;
+  componentWillMount() {
+    const { searchCount, getMostLiked } = this.props.actions;
 
-
-      searchCount().then(response => {
-        this.setState({ searchCount: response.data });
-      });
-    
+    searchCount().then(response => {
+      this.setState({ searchCount: response.data });
+    });
+    getMostLiked().then(response => {
+      this.setState({ mostLiked: response.data });
+    });
   }
 
-  searchWord(value){
-    const {searchAction} = this.props.actions
-    searchAction(value)
+  searchWord(value) {
+    const { searchAction, searchTextUpdate } = this.props.actions;
+    searchTextUpdate(value)
+    searchAction(value);
   }
 
+ 
   render() {
-    return (
-      <div>
-      <div className="row justify-content-md-center">Les mots les plus recherchés</div>
-      <div className="row justify-content-md-center">
+ 
+    const { showDetails } = this.props.home;
+    const {clickSerieDetails} = this.props.actions
+    if (showDetails === null) {
+      return (
+        <div>
+          <div className="row justify-content-md-center titre">Les mots les plus recherchés</div>
+          <div className="row justify-content-md-center">
+            <div className="home-cloud-word">
+              <TagCloud
+                minSize={13}
+                maxSize={55}
+                tags={this.state.searchCount}
+                className="simple-cloud"
+                shuffle={true}
+                onClick={tag => this.searchWord(tag.value)}
+              />
+            </div>
+          </div>
+          <div className="separateurCloudWord" />
+          <div className="row justify-content-md-center titre">Les series les plus aimées</div>
+          <div className="row justify-content-md-center">
+            <div className="home-cloud-word">
+              <TagCloud
+                minSize={15}
+                maxSize={65}
+                tags={this.state.mostLiked}
+                className="simple-cloud"
+                shuffle={true}
+                onClick={tag => clickSerieDetails(tag)}
+              />
+            </div>
+          </div>
       
-      <div className="home-cloud-word">
-        <TagCloud minSize={12}
-            maxSize={50}
-            tags={this.state.searchCount}
-            className="simple-cloud"
-            shuffle={true}
-            onClick={tag => this.searchWord(tag.value)} />
-
-      </div>
-      </div>
-      </div>
-    );
+        </div>
+       
+      );
+    } else {
+      return <div />;
+    }
   }
 }
 
@@ -81,4 +95,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(CloudWord);
-

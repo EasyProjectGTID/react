@@ -13,4 +13,6 @@ export { default as RecommandCompute } from './RecommandCompute';
 export { default as Footer } from './Footer';
 export { default as Resultat } from './Resultat';
 export { default as MesVotes } from './MesVotes';
+export { default as Upload } from './Upload';
+export { default as UploadSerie } from './UploadSerie';
 

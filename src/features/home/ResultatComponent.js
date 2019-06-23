@@ -42,14 +42,14 @@ export class ResultatComponent extends Component {
   }
 
   render() {
-    const { resultatRecherche, showDetails } = this.props.home;
+    const { resultatRecherche, showDetails, searchActionSucess } = this.props.home;
 
     if (showDetails === null) {
       return (
         <div className="div-container container">
           {this.renderText()}
 
-          <Row className="home-resultat-component">
+          <Row className="home-resultat-component justify-content-center">
             {resultatRecherche.length !== 0 && (
               <FontAwesomeIcon
                 className="icon-close"
@@ -58,6 +58,10 @@ export class ResultatComponent extends Component {
                 onClick={() => this.closeResultat()}
               />
             )}
+            {resultatRecherche.length === 0 && searchActionSucess && (
+              <div>Aucun résultats</div>
+            )}
+
             {this.props.home.searchActionPending && (
               <Col align="center">
                 <Loader className="search-loader" />
@@ -66,10 +70,11 @@ export class ResultatComponent extends Component {
 
             {resultatRecherche &&
               resultatRecherche.map((item, i) => (
-                <Col id={item.name}>
+                <div className="col-md-2" id={item.name}>
                   <PosterComponent movie={item} />
-                </Col>
+                </div>
               ))}
+
           </Row>
           <div className="separateur" />
         </div>

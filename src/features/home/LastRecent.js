@@ -36,10 +36,10 @@ export class LastRecent extends Component {
       infinite: true,
       speed: 250,
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
       autoplay: true,
 
-      autoplaySpeed: 2000,
+      autoplaySpeed: 1800,
       cssEase: 'linear',
     };
     const { showDetails } = this.props.home;
@@ -48,35 +48,16 @@ export class LastRecent extends Component {
       return (
         <div className="div-container container">
           <Row className=" testSerie justify-content-center align-self-center">
-            Nos dernière series
+            Nos dernières series
           </Row>
           <Slider className="slider" {...settings}>
             {this.state.lastR.map((item, i) => (
               <Col className="col-md-8 offset-md-2" key={i} >
                 <PosterComponent movie={item}  />
-                {/*<img
-                  className="img-recommandation"
-                  onClick={() => clickSerieDetails(item)}
-                  alt=""
-                  src={item.infos.Poster}
-                />*/}
               </Col>
             ))}
           </Slider>
-          {/*<Row>
-            {this.state.lastR.map((item, i) => (
-              <Col className="col-2">
-                <b>{item.name}</b>
-                <PosterComponent movie={item}/>
-                {/*<img
-                  className="img-recommandation"
-                  onClick={() => clickSerieDetails(item)}
-                  alt=""
-                  src={item.infos.Poster}
-                />}
-              </Col>
-            ))}
-          </Row>*/}
+   
         </div>
       );
     } else {

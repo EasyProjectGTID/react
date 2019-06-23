@@ -125,7 +125,7 @@ class Recommand extends Component {
         {Object.keys(this.state.series).map((item, i) => (
           <div className="row justify-content-md-center" key={i}>
             <div className="col-md-2">
-              <div className="form-check form-check-inline">
+              <div className="toto form-check form-check-inline">
                 <input
                   type="checkbox"
                   value={item}
@@ -140,7 +140,7 @@ class Recommand extends Component {
               <div className="name">{this.state.series[item]['name']}</div>
             </div>
             <div className="col-md-2">
-              <div className="form-check form-check-inline">
+              <div className="toto form-check form-check-inline">
                 <input
                   type="checkbox"
                   value={item}

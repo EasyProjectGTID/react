@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89d26e7b-31e0-4ba8-8ce2-f9ccd2c6aee1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/routeConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/routeConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/App.less" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/App.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/CloudWord.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/CloudWord.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/CloudWord.less" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/CloudWord.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/LastRecent.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/LastRecent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/LastRecent.less" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/LastRecent.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/MesVotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/MesVotes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/MesVotes.less" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/MesVotes.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/PosterComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/PosterComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/RecommandCompute.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/RecommandCompute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/RecommandCompute.less" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/RecommandCompute.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/Recommandations.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/Recommandations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/ResultatComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/ResultatComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/ResultatComponent.less" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/ResultatComponent.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/SerieDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/SerieDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/SerieDetails.less" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/SerieDetails.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/redux/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/redux/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/redux/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/redux/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/redux/initialState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/redux/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/redux/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/redux/searchAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/redux/searchAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/redux/vote.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/redux/vote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/slick-theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/slick-theme.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/slick.scss" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/slick.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/home/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/features/home/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/DefaultPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/DefaultPage.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/redux/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/redux/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/redux/initialState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/redux/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/vote/style.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/global.less" beforeDir="false" afterPath="$PROJECT_DIR$/styles/global.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/styles/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/features/vote/DefaultPage.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/features/vote/redux/reducer.test.js" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/home/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="50" column="38" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/home/redux/backToCompute.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/home/redux/getAllSerie.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#154#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/features/home/redux/getMostLiked.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#158#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/features/home/App.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/src.iml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1968" />
+    <option name="y" value="28" />
+    <option name="width" value="1872" />
+    <option name="height" value="1052" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../package.json" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/../package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89d26e7b-31e0-4ba8-8ce2-f9ccd2c6aee1" name="Default Changelist" comment="" />
+      <created>1560179570373</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560179570373</updated>
+      <workItem from="1560179572318" duration="136000" />
+      <workItem from="1560179728288" duration="166000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="302000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1968" y="28" width="1872" height="1052" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18570656" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3293348" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/features/home/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/home/redux/backToCompute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/home/redux/getAllSerie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/home/redux/getMostLiked.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

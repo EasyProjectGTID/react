@@ -1,17 +1,16 @@
 import {
-  HOME_SEARCH_ACTION_BEGIN,
-  HOME_SEARCH_ACTION_SUCCESS,
-  HOME_SEARCH_ACTION_FAILURE,
-  HOME_SEARCH_ACTION_DISMISS_ERROR,
+  HOME_UPLOAD_SERIE_BEGIN,
+  HOME_UPLOAD_SERIE_SUCCESS,
+  HOME_UPLOAD_SERIE_FAILURE,
+  HOME_UPLOAD_SERIE_DISMISS_ERROR,
 } from './constants';
-import httpService from '../../../services/httpService';
-import ip from '../../../services/config';
+
 // Rekit uses redux-thunk for async actions by default: https://github.com/gaearon/redux-thunk
 // If you prefer redux-saga, you can use rekit-plugin-redux-saga: https://github.com/supnate/rekit-plugin-redux-saga
-export function searchAction(args = {}) {
-  return (dispatch, getState) => { // optionally you can have getState as the second argument
+export function uploadSerie(args = {}) {
+  return (dispatch) => { // optionally you can have getState as the second argument
     dispatch({
-      type: HOME_SEARCH_ACTION_BEGIN,
+      type: HOME_UPLOAD_SERIE_BEGIN,
     });
 
     // Return a promise so that you could control UI flow without states in the store.
@@ -22,12 +21,11 @@ export function searchAction(args = {}) {
       // doRequest is a placeholder Promise. You should replace it with your own logic.
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
-      
-      const doRequest = httpService(getState().home.token).get(getState().home.baseApiUrl +'recherche?keywords=' + args)
+      const doRequest = args.error ? Promise.reject(new Error()) : Promise.resolve();
       doRequest.then(
         (res) => {
           dispatch({
-            type: HOME_SEARCH_ACTION_SUCCESS,
+            type: HOME_UPLOAD_SERIE_SUCCESS,
             data: res,
           });
           resolve(res);
@@ -35,7 +33,7 @@ export function searchAction(args = {}) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         (err) => {
           dispatch({
-            type: HOME_SEARCH_ACTION_FAILURE,
+            type: HOME_UPLOAD_SERIE_FAILURE,
             data: { error: err },
           });
           reject(err);
@@ -49,47 +47,43 @@ export function searchAction(args = {}) {
 
 // Async action saves request error by default, this method is used to dismiss the error info.
 // If you don't want errors to be saved in Redux store, just ignore this method.
-export function dismissSearchActionError() {
+export function dismissUploadSerieError() {
   return {
-    type: HOME_SEARCH_ACTION_DISMISS_ERROR,
+    type: HOME_UPLOAD_SERIE_DISMISS_ERROR,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case HOME_SEARCH_ACTION_BEGIN:
+    case HOME_UPLOAD_SERIE_BEGIN:
       // Just after a request is sent
       return {
         ...state,
-        resultatRecherche: [],
-        showDetails: null,
-        searchActionPending: true,
-        searchActionError: null,
-        searchActionSucess: null,
+        uploadSeriePending: true,
+        uploadSerieError: null,
       };
 
-    case HOME_SEARCH_ACTION_SUCCESS:
+    case HOME_UPLOAD_SERIE_SUCCESS:
+      // The request is success
       return {
         ...state,
-        resultatRecherche: action.data.data,
-        searchActionPending: false,
-        searchActionError: null,
-        searchActionSucess: true,
+        uploadSeriePending: false,
+        uploadSerieError: null,
       };
 
-    case HOME_SEARCH_ACTION_FAILURE:
+    case HOME_UPLOAD_SERIE_FAILURE:
       // The request is failed
       return {
         ...state,
-        searchActionPending: false,
-        searchActionError: action.data.error,
+        uploadSeriePending: false,
+        uploadSerieError: action.data.error,
       };
 
-    case HOME_SEARCH_ACTION_DISMISS_ERROR:
+    case HOME_UPLOAD_SERIE_DISMISS_ERROR:
       // Dismiss the request failure error
       return {
         ...state,
-        searchActionError: null,
+        uploadSerieError: null,
       };
 
     default:

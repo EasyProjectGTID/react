@@ -1,11 +1,15 @@
 @import '../../styles/mixins';
 
-.backToresult{
-  margin-top: 6%;
+.serie-similaire{
+  color:white;
+  margin-bottom:1%;
+}
+.backToresult {
+  margin-top: 3%;
 }
 
 .film-focus {
-  margin-top: 5%;
+  margin-top: 1%;
   opacity: 0.96;
   padding: 1em 1.5em;
 }
@@ -16,7 +20,7 @@
 }
 
 .desc-text {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .desc-text .film-title {
   font-weight: bold;
@@ -34,16 +38,18 @@
 .desc-text .stats span {
   margin: 0 0.75em;
 }
-.desc-text p, .prod {
+.desc-text p,
+.prod {
   font-size: 0.9em;
 }
 
-.prod .real, .prod .cast {
+.prod .real,
+.prod .cast {
   color: #ffc600;
   font-weight: 200;
 }
-.prod .real-value, .prod .cast-value {
-  
+.prod .real-value,
+.prod .cast-value {
 }
 
 .desc-film-btns .btns {
@@ -54,4 +60,28 @@
   text-align: center;
   padding: 0.75em;
   font-size: 0.55em;
+}
+
+.vote-button {
+
+  bottom: -5px;
+  transition: bottom ease 0.35s;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  > svg {
+    align-content: space-between;
+    flex: 1;
+    fill: #111;
+    transition: height ease 0.35s;
+    &:hover {
+      color: #fff;
+      height: 35px;
+    }
+  }
+}
+
+.button-retour{
+  margin-left:1%;
 }

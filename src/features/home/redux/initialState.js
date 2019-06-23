@@ -1,8 +1,8 @@
 const initialState = {
   token: "",
-  baseApiUrl: 'http://127.0.0.1:8000/',
+  baseApiUrl: '',
   resultatRecherche: [],
-  typeApp: 'search',
+  typeApp: '',
   cloudWords: [],
   resultatCompute: [],
   allSeries: {},
@@ -28,6 +28,16 @@ const initialState = {
   deleteVoteSuccess: false,
   searchCountPending: false,
   searchCountError: null,
+  getMostLikedPending: false,
+  getMostLikedError: null,
+  getWordsOfSeriePending: false,
+  getWordsOfSerieError: null,
+  uploadSeriePending: false,
+  uploadSerieError: null,
+  searchActionSucess: null,
+  searchText: '',
+  totoPending: false,
+  totoError: null,
 
 
 };

@@ -19,23 +19,24 @@ export class PosterComponent extends Component {
       calculatedHeight: 0,
       afficheRating: this.props.movie.afficheVote,
     };
-    this.poster = React.createRef();
+    this.poster = null
+
+    this.setPosterRef = element => {
+      this.poster = element;
+    };
+
+    this.doCalculateHeight = () => {
+      if (this.poster) {
+        this.setState({ calculatedHeight: this.poster.clientWidth * 1.5 })
+      }
+    };
+
   }
 
-  getSnapshotBeforeUpdate() {
-    return null;
-  }
   componentDidMount() {
-    setTimeout(
-      () => this.setState({ calculatedHeight: this.poster.current.clientWidth * 1.5 }),
-      50,
-    );
+    this.doCalculateHeight()
   }
-componentDidUpdate(prevProps, prevState) {
-  if(prevProps.movie.afficheVote !== this.state.afficheRating){
-    this.setState({afficheRating: this.props.movie.afficheVote})
-  }
-}
+
   formatToPost(args, choice) {
     const { isMyVotesComponent } = this.props
     this.setState({ afficheRating: false });
@@ -51,11 +52,11 @@ componentDidUpdate(prevProps, prevState) {
     const { clickSerieDetails, openModalSignOrConnect } = this.props.actions;
     const { modalSignOrConnect, token } = this.props.home;
     const { vote } = this.props.actions;
-    console.log(this.props.home.token, this.props.home.user)
+
     return (
       <div
         className="poster-image"
-        ref={this.poster}
+        ref={this.setPosterRef}
         style={{
           backgroundImage: `url(${this.props.movie.infos.Poster})`,
           height: `${this.state.calculatedHeight}px`,

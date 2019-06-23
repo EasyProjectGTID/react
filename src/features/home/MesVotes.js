@@ -92,18 +92,19 @@ export class MesVotes extends Component {
           </div>
           
           
-         <div className="row justify-content-center title"> Nous vous recommandons en fonction de vos vote</div>
-          <Row className="row justify-content-center ">
+         {this.state.resultat.length != 0 && <div className="title row justify-content-center ">
+         <div> Nous vous recommandons en fonction de vos vote</div></div>}
+          <div className="row justify-content-center ">
             {this.state.resultat.map((item, i) => (
-              <Col className="col-md-2 col-md-pull-15" id={item.name}>
+              <div className="col-md-2 col-md-pull-15" id={item.name}>
                 <PosterComponent 
                   movie={item} 
                   isMyVotesComponent={true}
                   onVoteCallback={() => this.computeVoteThenUpdate()}
                   />
-              </Col>
+              </div>
             ))}
-          </Row>
+          </div>
         </div>
       );
     } else {
